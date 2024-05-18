@@ -159,9 +159,8 @@ void Gestor::backtrack() {
 
     std::cout << "Minimum Distance: " << min_cost << std::endl;
     std::cout << "Execution Time: " << double(end - start) / CLOCKS_PER_SEC << " seconds" << std::endl;
-
-
 }
+
 /**
  * This function applies the triangular approximation algorithm to the graph to solve the Travelling Salesman Problem (TSP).
  * It measures and prints the minimum distance and the execution time.

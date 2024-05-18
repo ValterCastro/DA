@@ -200,12 +200,10 @@ void Graph::tsp_backtrack(vector<int> &path, vector<bool>& visited, double &min_
     if(path.size() == vertexSet.size()){
         int start_vertex = path.front();
         int last_vertex = path.back();
-        for(Edge *edge: (vertexMap.find(last_vertex))->second->getAdj()){
-            if(edge->getDest()->getId() == start_vertex){
+        for (Edge *edge: (vertexMap.find(last_vertex))->second->getAdj()){
+            if (edge->getDest()->getId() == start_vertex){
                 double cost = costSoFar + edge->getWeight();
-                if(cost < min_cost){
-                    min_cost = cost;
-                }
+                min_cost = min(cost, min_cost);
                 break;
             }
 
