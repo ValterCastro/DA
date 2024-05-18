@@ -1,0 +1,84 @@
+\hypertarget{_graph_8h_source}{}\doxysection{Graph.\+h}
+\label{_graph_8h_source}\index{C:/Users/USER/Desktop/Universidade/2ano/DA2/data\_structures/Graph.h@{C:/Users/USER/Desktop/Universidade/2ano/DA2/data\_structures/Graph.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{// By: Gonçalo Leão}}
+\DoxyCodeLine{2 }
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#ifndef DA\_TP\_CLASSES\_GRAPH}}
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#define DA\_TP\_CLASSES\_GRAPH}}
+\DoxyCodeLine{5 }
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include <queue>}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include <limits>}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include <algorithm>}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include <unordered\_map>}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include <stack>}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}MutablePriorityQueue.h"{}}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include <queue>}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include <limits>}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#include <algorithm>}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#include <set>}}
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#include <cmath>}}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#include "{}VertexEdge.h"{}}}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24 \textcolor{keyword}{class }\mbox{\hyperlink{class_graph}{Graph}} \{}
+\DoxyCodeLine{25 \textcolor{keyword}{public}:}
+\DoxyCodeLine{26     \mbox{\hyperlink{class_graph}{Graph}}();}
+\DoxyCodeLine{27     \textcolor{comment}{/*}}
+\DoxyCodeLine{28 \textcolor{comment}{    * Auxiliary function to find a vertex with a given ID.}}
+\DoxyCodeLine{29 \textcolor{comment}{    */}}
+\DoxyCodeLine{30     \mbox{\hyperlink{class_vertex}{Vertex}} *\mbox{\hyperlink{class_graph_a05c45e4efdf867792139ddf3628c0b60}{findVertex}}(\textcolor{keywordtype}{int} \textcolor{keywordtype}{id}) \textcolor{keyword}{const};}
+\DoxyCodeLine{31     \textcolor{comment}{/*}}
+\DoxyCodeLine{32 \textcolor{comment}{     *  Adds a vertex with a given content or info (in) to a graph (this).}}
+\DoxyCodeLine{33 \textcolor{comment}{     *  Returns true if successful, and false if a vertex with that content already exists.}}
+\DoxyCodeLine{34 \textcolor{comment}{     */}}
+\DoxyCodeLine{35     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_graph_a2d2f69946b29fee07c53cb6552c7690e}{addVertex}}(\textcolor{keywordtype}{int} \textcolor{keywordtype}{id});}
+\DoxyCodeLine{36     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_graph_a2d2f69946b29fee07c53cb6552c7690e}{addVertex}}(\textcolor{keywordtype}{int} \textcolor{keywordtype}{id}, \textcolor{keywordtype}{double} longitude, \textcolor{keywordtype}{double} latitude);}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_graph_a45f1e9e76bcadbd27addb9c5cc455226}{tsp\_backtrack}}(vector<int> \&path, vector<bool>\& visited, \textcolor{keywordtype}{double} \&min\_cost, \textcolor{keywordtype}{double} costSoFar);}
+\DoxyCodeLine{39     \textcolor{keywordtype}{double} \mbox{\hyperlink{class_graph_a74ac3915ab78762e537d45657e30429b}{triangularApproximation}}();}
+\DoxyCodeLine{40     vector<Edge*> \mbox{\hyperlink{class_graph_aaaf65f343e3c67b1b783f82375884a8f}{prim}}();}
+\DoxyCodeLine{41     \textcolor{keywordtype}{int} \mbox{\hyperlink{class_graph_a69281f435a52c341937ffddca5555f32}{minWeight}}(vector<double> \&weights,vector<bool> \&inMST);}
+\DoxyCodeLine{42     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_graph_ae425a227650e2270bd2f0f57281786bc}{dfs}}(\textcolor{keyword}{const} vector<Edge*> \&mst, \mbox{\hyperlink{class_vertex}{Vertex}}* v, vector<bool> \&visited, vector<int> \&path);}
+\DoxyCodeLine{43     \textcolor{keywordtype}{double} \mbox{\hyperlink{class_graph_a8b0db3dbf1368e972e7c551f6084db62}{haversine}}(\textcolor{keywordtype}{double} lat1, \textcolor{keywordtype}{double} lon1, \textcolor{keywordtype}{double} lat2, \textcolor{keywordtype}{double} lon2);}
+\DoxyCodeLine{44     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_graph_a8680f19d7040f83a874d04dae72e6285}{haveEdge}}(\textcolor{keywordtype}{int} v1, \textcolor{keywordtype}{int} v2);}
+\DoxyCodeLine{45     \textcolor{keywordtype}{double} \mbox{\hyperlink{class_graph_a4653f95b8dbec22cbf1b0e24e3e7dd16}{totalDistance}}(\textcolor{keyword}{const} vector<int> \&path);}
+\DoxyCodeLine{46     \textcolor{keywordtype}{double} \mbox{\hyperlink{class_graph_a78b8f75055384d32f66433e26bd5a1fb}{nearestNeighbor}}(\mbox{\hyperlink{class_vertex}{Vertex}}* \&initial,\mbox{\hyperlink{class_vertex}{Vertex}}* \&current, vector<Edge*>\& path, \textcolor{keywordtype}{int} graphSize, \textcolor{keywordtype}{double} \&distance, \textcolor{keywordtype}{bool} all);}
+\DoxyCodeLine{47     \textcolor{comment}{/*}}
+\DoxyCodeLine{48 \textcolor{comment}{     * Adds an edge to a graph (this), given the contents of the source and}}
+\DoxyCodeLine{49 \textcolor{comment}{     * destination vertices and the edge weight (w).}}
+\DoxyCodeLine{50 \textcolor{comment}{     * Returns true if successful, and false if the source or destination vertex does not exist.}}
+\DoxyCodeLine{51 \textcolor{comment}{     */}}
+\DoxyCodeLine{52     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_graph_a9bfae99b65a95d5d51696cdda1cab1bb}{addEdge}}(\textcolor{keywordtype}{int} sourc,\textcolor{keywordtype}{int} dest,\textcolor{keywordtype}{double} w);}
+\DoxyCodeLine{53     \textcolor{keywordtype}{bool} addBidirectionalEdge(\textcolor{keywordtype}{int} sourc,\textcolor{keywordtype}{int} dest,\textcolor{keywordtype}{double} w);}
+\DoxyCodeLine{54 }
+\DoxyCodeLine{55     \textcolor{keyword}{const} \textcolor{keywordtype}{int} getNumVertex() \textcolor{keyword}{const};}
+\DoxyCodeLine{56     std::unordered\_map<int, Vertex*> getVertexMap() \textcolor{keyword}{const};}
+\DoxyCodeLine{57 }
+\DoxyCodeLine{58 }
+\DoxyCodeLine{59 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{60     set<Vertex*> vertexSet;}
+\DoxyCodeLine{61     unordered\_map<int,Vertex*> vertexMap;}
+\DoxyCodeLine{62     \textcolor{keywordtype}{double} ** distMatrix = \textcolor{keyword}{nullptr};   \textcolor{comment}{// dist matrix for Floyd-\/Warshall}}
+\DoxyCodeLine{63     \textcolor{keywordtype}{int} **pathMatrix = \textcolor{keyword}{nullptr};   \textcolor{comment}{// path matrix for Floyd-\/Warshall}}
+\DoxyCodeLine{64 }
+\DoxyCodeLine{65     \textcolor{comment}{/*}}
+\DoxyCodeLine{66 \textcolor{comment}{     * Finds the index of the vertex with a given content.}}
+\DoxyCodeLine{67 \textcolor{comment}{     */}}
+\DoxyCodeLine{68     \textcolor{keywordtype}{int} \mbox{\hyperlink{class_graph_a7dfcef08a9286cf144902cd7e56940ee}{findVertexIdx}}(\textcolor{keyword}{const} \textcolor{keywordtype}{int} \&\textcolor{keywordtype}{id}) \textcolor{keyword}{const};}
+\DoxyCodeLine{69 \};}
+\DoxyCodeLine{70 }
+\DoxyCodeLine{71 \textcolor{keyword}{class }\mbox{\hyperlink{classweight_compare}{weightCompare}}\{}
+\DoxyCodeLine{72 \textcolor{keyword}{public}:}
+\DoxyCodeLine{73     \textcolor{keywordtype}{bool} operator()(\textcolor{keyword}{const} \mbox{\hyperlink{class_edge}{Edge}}* e1, \textcolor{keyword}{const} \mbox{\hyperlink{class_edge}{Edge}}* e2)\textcolor{keyword}{ const}\{}
+\DoxyCodeLine{74         \textcolor{keywordflow}{return} e1-\/>getWeight() > e2-\/>getWeight();}
+\DoxyCodeLine{75     \}}
+\DoxyCodeLine{76 \};}
+\DoxyCodeLine{77 }
+\DoxyCodeLine{78 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* DA\_TP\_CLASSES\_GRAPH */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}
