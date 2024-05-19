@@ -200,6 +200,19 @@ void Gestor::nearestNeighbor(){
     clock_t end = clock();
     std::cout << "Execution Time: " << double(end - start) / CLOCKS_PER_SEC << " seconds" << std::endl;
 }
+
+void Gestor::tspNonFullyConnected(int startNode) {
+    clock_t start = clock();
+    double result = graph.tspNonFullyConnected(startNode);
+    clock_t end = clock();
+    if (result < 0) {
+        std::cout << "No path exists to visit all nodes." << std::endl;
+    } else {
+        std::cout << "Minimum Distance: " << result << std::endl;
+    }
+    std::cout << "Execution Time: " << double(end - start) / CLOCKS_PER_SEC << " seconds" << std::endl;
+}
+
 void Gestor::menu() {
     while (true){
         cout << "--------------------------------------------------------\n";

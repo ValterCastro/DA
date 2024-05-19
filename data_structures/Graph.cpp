@@ -102,6 +102,48 @@ bool Graph::addBidirectionalEdge(int sourc,int dest,double w) {
     e2->setReverse(e1);
     return true;
 }
+
+double Graph::findOrCalculateDistance(int origem, int destino) {
+    Vertex* v1 = findVertex(origem);
+    Vertex* v2 = findVertex(destino);
+    if (!v1 || !v2) return std::numeric_limits<double>::max();
+    Edge* edge = nullptr;
+    for (Edge* e : v1->getAdj()) {
+        if (e->getDest() == v2) {
+            edge = e;
+            break;
+        }
+    }
+    if (edge) return edge->getWeight();
+    return haversine(v1->getLat(), v1->getLon(), v2->getLat(), v2->getLon());
+}
+
+double Graph::calculate_tsp(int node, int edge, std::vector<std::vector<double>>& dists) {
+    if (dists[node][edge] != -1) return dists[node][edge];
+
+    double ans = std::numeric_limits<double>::max();
+
+    if (edge == (1 << getNumVertex()) - 1) {
+        return findOrCalculateDistance(node, 0);
+    }
+
+    for (int i = 0; i < getNumVertex(); ++i) {
+        if (!(edge & (1 << i))) {
+            double tmp = findOrCalculateDistance(node, i) + calculate_tsp(i, edge | (1 << i), dists);
+            ans = std::min(ans, tmp);
+        }
+    }
+
+    return dists[node][edge] = ans;
+}
+
+double Graph::tspNonFullyConnected(int startNode) {
+    int n = getNumVertex();
+    std::vector<std::vector<double>> dists(n, std::vector<double>((1 << n), -1));
+    return calculate_tsp(startNode, 1 << startNode, dists);
+}
+
+
 /**
  * This function is used to perform a DFS on the graph starting from a given vertex.
  * It has a complexity of O(V + E) where V is the number of vertices and E is the number of edges.

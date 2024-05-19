@@ -18,6 +18,7 @@ private:
     void backtrack();
     void triangular();
     void nearestNeighbor();
+    void tspNonFullyConnected(int startNode);
 
     void read2Files(const string &nodes, const string &edges);
 

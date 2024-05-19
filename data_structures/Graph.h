@@ -55,12 +55,18 @@ public:
     const int getNumVertex() const;
     std::unordered_map<int, Vertex*> getVertexMap() const;
 
+    void tsp_backtrack(std::vector<int> &path, std::vector<bool>& visited, double &min_cost, double costSoFar);
+    double calculate_tsp(int node, int edge, std::vector<std::vector<double>>& dists);
+    double tspNonFullyConnected(int startNode);
+
 
 protected:
     set<Vertex*> vertexSet;
     unordered_map<int,Vertex*> vertexMap;
     double ** distMatrix = nullptr;   // dist matrix for Floyd-Warshall
     int **pathMatrix = nullptr;   // path matrix for Floyd-Warshall
+
+    double findOrCalculateDistance(int origem, int destino);
 
     /*
      * Finds the index of the vertex with a given content.
