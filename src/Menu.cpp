@@ -6,6 +6,7 @@
 #include "fstream"
 #include "vector"
 #include "Menu.h"
+#include "Graph.h"
 
 using namespace std;
 
@@ -19,6 +20,8 @@ int Menu::ReadMenu() {
     cout << "------------------------------------------------------------------\n";
     cout << "| 1 - Read Toy-Graphs                                            |\n";
     cout << "------------------------------------------------------------------\n";
+    cout << "| 2 - Choose Algorithm                                           |\n";
+    cout << "------------------------------------------------------------------\n";
     cout << "| 0 - Exit                                                       |\n";
     cout << "------------------------------------------------------------------\n";
 
@@ -30,11 +33,40 @@ int Menu::ReadMenu() {
             break;
         case 1:
             ReadGraphMenu();
+            break;
+        case 2:
+            AlgorithmMenu(option);
+            break;
         default:
             break;
     }
 
     return 0;
+}
+
+void Menu::AlgorithmMenu(int option) {
+    cout << "------------------------------------------------------------------\n";
+    cout << "|          Project II Ocean Shipping && Urban Deliveries         |\n";
+    cout << "------------------------------------------------------------------\n";
+    cout << "| 1 - BackTrack Algorithm                                        |\n";
+    cout << "------------------------------------------------------------------\n";
+    cout << "| 0 - Exit                                                       |\n";
+    cout << "------------------------------------------------------------------\n";
+
+
+    cin >> option;
+
+    switch (option) {
+        case 0:
+            break;
+        case 1:
+            //backtrack->calculate_tsp();
+            break;
+        case 2:
+            break;
+        default:
+            break;
+    }
 }
 
 std::vector<std::string> split(const std::string& str, char delimiter) {
@@ -67,12 +99,26 @@ int Menu::ReadGraph(std::string graph) {
 
     file.close();
 
+
     for (const auto& row : data) {
+        int i = 0;
+        vector<int> aux;
         for (const auto& col : row) {
-            std::cout << col << " ";
+
+            if(i < 2){
+                backtrack->addVertex(stoi(col));
+                aux.push_back(stoi(col));
+            }
+            else{
+                backtrack->addEdge(aux[0],aux[1], stoi(col));
+            }
+            //std::cout << col << " ";
+            ++i;
         }
+        aux.clear();
         std::cout << std::endl;
     }
+
 
     cout << "------------------------------------------------------------------\n";
     cout << "| 1 - Go back                                                    |\n";

@@ -35,7 +35,7 @@ public:
     bool addVertex(int id);
     bool addVertex(int id, double longitude, double latitude);
 
-    void tsp_backtrack(vector<int> &path, vector<bool>& visited, double &min_cost, double costSoFar);
+    //void tsp_backtrack(vector<int> &path, vector<bool>& visited, double &min_cost, double costSoFar);
     double triangularApproximation();
     vector<Edge*> prim();
     int minWeight(vector<double> &weights,vector<bool> &inMST);
