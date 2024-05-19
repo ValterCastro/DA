@@ -10,7 +10,17 @@ Vertex::Vertex(int id, string label): id(id), label(label){};
 
 Vertex::Vertex(int id, double longitude, double latitude): id(id), longitude(longitude), latitude(latitude){};
 
+void Vertex::setLabel(std::string label) {
+    this->label = label;
+}
 
+void Vertex::setLongitude(double longitude) {
+    this->longitude = longitude;
+}
+
+void Vertex::setLatitude(double latitude) {
+    this->latitude = latitude;
+}
 /*
  * Auxiliary function to add an outgoing edge to a vertex (this),
  * with a given destination vertex (d) and edge weight (w).

@@ -36,10 +36,13 @@ public:
     double getLat() const;
     double getLon() const;
 
+
     std::vector<Edge *> getIncoming() const;
 
     void setId(int id);
-
+    void setLabel(string label);
+    void setLongitude(double longitude);
+    void setLatitude(double latitude);
     void setVisited(bool visited);
     void setProcesssing(bool processing);
     void setIndegree(unsigned int indegree);

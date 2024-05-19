@@ -9,12 +9,15 @@
 
 class Menu{
 private:
-    int ReadGraph(std::string graph);
-    void ReadGraphMenu();
+    int ReadGraph(std::string graph, std::string type);
+    void ReadToyGraphMenu();
+    void ReadRealWorldGraphMenu();
     void AlgorithmMenu(int option);
+
 
 public:
     Graph* backtrack = new Graph();
+    Graph* triangular_heuristic = new Graph();
     Menu();
     int ReadMenu();
 };
