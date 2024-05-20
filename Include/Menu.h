@@ -1,9 +1,4 @@
-//
-// Created by Válter Castro on 16/05/2024.
-//
-
-#ifndef DA2_MENU_H
-#define DA2_MENU_H
+#pragma once
 
 #include "Graph.h"
 
@@ -41,7 +36,7 @@ private:
     void ReadExtraGraphMenu();
 
 public:
-    Graph* graph = new Graph();
+    Graph graph;
     /*!
      * \brief Function to display algorithms interface.
      * \param option To choose which algorithm.
@@ -51,10 +46,8 @@ public:
 
 public:
     /*!
-     * \brief Constructor for Menu💀.
+     * \brief Constructor for Menu.
      */
     Menu();
     int ReadMenu();
 };
-
-#endif //DA2_MENU_H

@@ -107,12 +107,13 @@ double nearestNeighbor(Vertex* root) {
     };
 
     Vertex *current = root;
-    current->setVisited(true);
 
     double distance = 0.0f;
     vector<Edge*> path;
 
     while (true) {
+        current->setVisited(true);
+
         Edge *minEdge = getShortestUnvisitedEdge(current->getAdj());
         if (minEdge == nullptr) break;
 
@@ -135,19 +136,23 @@ double nearestNeighbor(Vertex* root) {
 }
 
 
-double backtrackHelper(Vertex *current, double min) {
+void backtrackHelper(Vertex *current, size_t left, double &min) {
+    if (current->getDist() > min) return;
+    if (left == 0) { min = std::min(min, current->getDist()); return; }
 
     for (Edge *edge : current->getAdj()) {
         Vertex *v = edge->getDest();
         if (!v->isVisited()) {
             v->setVisited(true);
             v->setDist(current->getDist() + edge->getWeight());
+            v->setPath(edge);
 
-            backtrackHelper(v, v->getDist());
+            backtrackHelper(v, left - 1, min);
 
             v->setVisited(false);
         }
     }
+
 }
 
 double backtrack(Graph &g, Vertex *start) {
@@ -156,5 +161,9 @@ double backtrack(Graph &g, Vertex *start) {
         pair.second->setDist(0);
     }
 
-    return backtrackHelper(start, -1);
+    start->setVisited(true);
+
+    double minDistance = numeric_limits<double>::max();
+    backtrackHelper(start, g.getNumVertex() - 1, minDistance);
+    return minDistance;
 }

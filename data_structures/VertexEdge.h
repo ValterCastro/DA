@@ -1,7 +1,4 @@
-// By: Gonçalo Leão
-
-#ifndef DA_TP_CLASSES_VERTEX_EDGE
-#define DA_TP_CLASSES_VERTEX_EDGE
+#pragma once
 
 #include <iostream>
 #include <vector>
@@ -9,12 +6,10 @@
 #include <limits>
 #include <algorithm>
 #include <string>
-#include "MutablePriorityQueue.h"
 
 using namespace std;
 class Edge;
 
-#define INF std::numeric_limits<double>::max()
 
 /************************* Vertex  **************************/
 
@@ -51,27 +46,23 @@ public:
 
     Edge * addEdge(Vertex *dest, double w);
     bool removeEdge(int id);
-    void removeOutgoingEdges();
     std::vector<Edge*> getOutgoing(Vertex* v) const;
-    friend class MutablePriorityQueue<Vertex>;
 
 
 protected:
-    int id;                // identifier
+    int id;
     double longitude;
     double latitude;
     string label;
-    std::vector<Edge *> adj;  // outgoing edges
-    // auxiliary fields
-    bool visited = false; // used by DFS, BFS, Prim ...
-    bool processing = false; // used by isDAG (in addition to the visited attribute)
-    unsigned int indegree; // used by topsort
+    std::vector<Edge *> adj;
+    bool visited = false;
+    bool processing = false;
+    unsigned int indegree;
     double dist = 0;
     Edge *path = nullptr;
 
-    std::vector<Edge *> incoming; // incoming edges
+    std::vector<Edge *> incoming;
 
-    int queueIndex = 0; 		// required by MutablePriorityQueue and UFDS
 
 };
 
@@ -86,21 +77,13 @@ public:
     bool isSelected() const;
     Vertex * getOrig() const;
     Edge *getReverse() const;
-    int getFlow() const;
     void setSelected(bool selected);
     void setReverse(Edge *reverse);
-    void setFlow(double flow);
 protected:
-    Vertex * dest; // destination vertex
-    float weight; // edge weight, can also be used for capacity
-
-    // auxiliary fields
+    Vertex * dest;
+    float weight;
     bool selected = false;
-    // used for bidirectional edges
     Vertex *orig;
     Edge *reverse = nullptr;
-
-    double flow; // for flow-related problems
 };
 
-#endif /* DA_TP_CLASSES_VERTEX_EDGE */

@@ -1,19 +1,14 @@
-//
-// Created by Válter Castro on 16/05/2024.
-//
 #include "iostream"
 #include "sstream"
 #include "fstream"
 #include "vector"
 #include "Menu.h"
 #include "Graph.h"
-#include <cstdlib>
-#include "Gestor.h"
 #include "Algoritmos.h"
 
 using namespace std;
 
-Menu::Menu(){
+Menu::Menu() {
     ReadMenu();
 }
 
@@ -159,36 +154,30 @@ void Menu::AlgorithmMenu() {
 
     switch (option) {
         case 1: {
-            // TODO
             clock_t start = clock();
 
-            double min_cost = numeric_limits<double>::max();
-            vector<int> path = {0};
-            vector<bool> visited(graph->getNumVertex(),false);
-            visited[0] = true;
-
-            graph->tsp_backtrack(path,visited,min_cost,0);
+            double res = backtrack(graph, graph.findVertex(0));
 
             clock_t end = clock();
 
-            std::cout << "Minimum Distance: " << min_cost << std::endl;
+            std::cout << "Minimum Distance: " << res << std::endl;
             std::cout << "Execution Time: " << double(end - start) / CLOCKS_PER_SEC << " seconds" << std::endl;
             break;
         } case 2: {
             clock_t start = clock();
-            double total = triangularApproximation(*graph);
+            double total = triangularApproximation(graph);
             clock_t end = clock();
 
             std::cout << fixed << "Minimum Distance: " << total << std::endl;
-            std::cout << "Execution Time: " << double(end - start) / CLOCKS_PER_SEC << " seconds" << std::endl;
+            std::cout << fixed << "Execution Time: " << double(end - start) / CLOCKS_PER_SEC << " seconds" << std::endl;
             break;
         } case 3: {
             clock_t start = clock();
-            double distance = nearestNeighbor(graph->findVertex(0));
+            double distance = nearestNeighbor(graph.findVertex(0));
             clock_t end = clock();
 
             cout << fixed << "Minimum Distance: " << distance << endl;
-            std::cout << "Execution Time: " << double(end - start) / CLOCKS_PER_SEC << " seconds" << std::endl;
+            std::cout << fixed << "Execution Time: " << double(end - start) / CLOCKS_PER_SEC << " seconds" << std::endl;
         } default:
             break;
     }
@@ -225,13 +214,8 @@ int Menu::ReadGraph(std::string &graph, GraphType type) {
 
     switch (type) {
         case Nodes: {
-            for (const auto &row: data) {
-                int id = stoi(row[0]);
-                this->graph->addVertex(id);
-                Vertex *cur = this->graph->findVertex(id);
-                cur->setLongitude(stod(row[1]));
-                cur->setLatitude(stod(row[2]));
-            }
+            for (const auto &row: data)
+                this->graph.addVertex(stoi(row[0]), stod(row[1]), stod(row[2]));
             break;
         } default: {
             if (type == Both) {
@@ -242,12 +226,12 @@ int Menu::ReadGraph(std::string &graph, GraphType type) {
                 }
 
                 for (int vertex: vertices) {
-                    this->graph->addVertex(vertex);
+                    this->graph.addVertex(vertex);
                 }
             }
 
             for (const auto& row : data)
-                this->graph->addEdge(stoi(row[0]), stoi(row[1]), stod(row[2]));
+                this->graph.addBidirectionalEdge(stoi(row[0]), stoi(row[1]), stod(row[2]));
         }
     }
 
@@ -339,4 +323,6 @@ void Menu::ReadToyGraphMenu() {
             ReadToyGraphMenu();
             break;
     }
+
+    AlgorithmMenu();
 }
