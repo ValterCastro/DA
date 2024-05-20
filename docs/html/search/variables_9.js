@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['path_0',['path',['../class_u_f_d_s.html#af77dd98a4e13936452f132a49b36e95a',1,'UFDS::path'],['../class_vertex.html#a4e83821f961f6eb63ad210260ba0e1e2',1,'Vertex::path']]],
-  ['pathmatrix_1',['pathMatrix',['../class_graph.html#a3ae09699c3616af3ebfcb1eb045f2b62',1,'Graph']]],
-  ['processing_2',['processing',['../class_vertex.html#a305dc8fcad6e4c7ef2491409ca7ddaa4',1,'Vertex']]]
+  ['vertexmap_0',['vertexMap',['../classGraph.html#ac18b60256748367ead62ee28c0f05091',1,'Graph']]],
+  ['vertexset_1',['vertexSet',['../classGraph.html#a7abf58446a9d0e8bac8d510d0d68d02f',1,'Graph']]],
+  ['visited_2',['visited',['../classVertex.html#aaef9f7de91b4b8f1752d391a1aae9c2e',1,'Vertex']]]
 ];

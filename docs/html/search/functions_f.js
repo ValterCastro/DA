@@ -1,7 +1,4 @@
 var searchData=
 [
-  ['totaldistance_0',['totalDistance',['../class_graph.html#a4653f95b8dbec22cbf1b0e24e3e7dd16',1,'Graph::totalDistance()'],['../_algoritmos_8cpp.html#ae4f503042ac661e5cf8e1a6be13ae2f8',1,'totalDistance(const vector&lt; Vertex * &gt; &amp;path):&#160;Algoritmos.cpp'],['../_algoritmos_8h.html#ae4f503042ac661e5cf8e1a6be13ae2f8',1,'totalDistance(const vector&lt; Vertex * &gt; &amp;path):&#160;Algoritmos.cpp']]],
-  ['triangularapproximation_1',['triangularApproximation',['../class_graph.html#a74ac3915ab78762e537d45657e30429b',1,'Graph::triangularApproximation()'],['../_algoritmos_8cpp.html#a8238fb20dac4f63003fd0a53b813ff0c',1,'triangularApproximation(Graph &amp;graph):&#160;Algoritmos.cpp'],['../_algoritmos_8h.html#a8238fb20dac4f63003fd0a53b813ff0c',1,'triangularApproximation(Graph &amp;graph):&#160;Algoritmos.cpp']]],
-  ['tsp_5fbacktrack_2',['tsp_backtrack',['../class_graph.html#a140e570786384d66d516eeafb46dab74',1,'Graph']]],
-  ['tspnonfullyconnected_3',['tspNonFullyConnected',['../class_graph.html#ad809364a84448a9fa0c7340fceeb217d',1,'Graph']]]
+  ['vertex_0',['Vertex',['../classVertex.html#af2d4681f3cb6deeeed264950bf2d4a9e',1,'Vertex::Vertex(int id)'],['../classVertex.html#a6f187d8d1589e031e6225df6d16e6e0e',1,'Vertex::Vertex(int id, string label)'],['../classVertex.html#a915e0b3cea07f2642999640446974151',1,'Vertex::Vertex(int id, double longitude, double latitude)']]]
 ];

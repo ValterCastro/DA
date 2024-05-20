@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['h_0',['H',['../class_mutable_priority_queue.html#a28cece6545bdc0df529e7878ad2c3ad4',1,'MutablePriorityQueue']]]
+  ['orig_0',['orig',['../classEdge.html#a48f1521d20ead8492fd1d184656862f5',1,'Edge']]]
 ];

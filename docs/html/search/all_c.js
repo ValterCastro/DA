@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['operator_28_29_0',['operator()',['../classweight_compare.html#af9c7aa01ad22b650cad040506752c3fa',1,'weightCompare']]],
-  ['operator_3c_1',['operator&lt;',['../class_vertex.html#ad4ccd48170a1530ec1db5eb306357a74',1,'Vertex']]],
-  ['orig_2',['orig',['../class_edge.html#a48f1521d20ead8492fd1d184656862f5',1,'Edge']]]
+  ['path_0',['path',['../classVertex.html#a4e83821f961f6eb63ad210260ba0e1e2',1,'Vertex']]],
+  ['prim_1',['prim',['../Algoritmos_8cpp.html#aceb5640b662acd25284e80ae1a9dc0a0',1,'prim(Graph &amp;graph, int root):&#160;Algoritmos.cpp'],['../Algoritmos_8h.html#aceb5640b662acd25284e80ae1a9dc0a0',1,'prim(Graph &amp;graph, int root):&#160;Algoritmos.cpp']]],
+  ['processing_2',['processing',['../classVertex.html#a305dc8fcad6e4c7ef2491409ca7ddaa4',1,'Vertex']]]
 ];

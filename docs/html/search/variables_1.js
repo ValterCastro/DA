@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['backtrack_0',['backtrack',['../class_menu.html#ae366980321f279570ef7f2f14f2daf75',1,'Menu']]]
+  ['dest_0',['dest',['../classEdge.html#a50339c1a85710ca827d4e3865727ffd7',1,'Edge']]],
+  ['dist_1',['dist',['../classVertex.html#a11d98611f5101fe7f46785d8b9c53f44',1,'Vertex']]]
 ];

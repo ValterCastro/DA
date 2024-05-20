@@ -1,8 +1,23 @@
 var searchData=
 [
-  ['findorcalculatedistance_0',['findOrCalculateDistance',['../class_graph.html#aa4c4a4f14dd351b27bbf1db5dd17d194',1,'Graph']]],
-  ['findset_1',['findSet',['../class_u_f_d_s.html#afe161413e4cd6702b2ca2f475eddeca0',1,'UFDS']]],
-  ['findvertex_2',['findVertex',['../class_graph.html#a05c45e4efdf867792139ddf3628c0b60',1,'Graph']]],
-  ['findvertexidx_3',['findVertexIdx',['../class_graph.html#a7dfcef08a9286cf144902cd7e56940ee',1,'Graph']]],
-  ['flow_4',['flow',['../class_edge.html#adbe59333b5a49cbb85b39ce1272e6098',1,'Edge']]]
+  ['getadj_0',['getAdj',['../classVertex.html#a9858f2aa388d2bfb49d9df8f4504b5a0',1,'Vertex']]],
+  ['getdest_1',['getDest',['../classEdge.html#a5cda44e9ba257b03963a1ac301371a59',1,'Edge']]],
+  ['getdist_2',['getDist',['../classVertex.html#aa36ca926de23a6e7283be42e2930957c',1,'Vertex']]],
+  ['getid_3',['getId',['../classVertex.html#a75b6b4a4afc26affea59fdae48aa30b1',1,'Vertex']]],
+  ['getincoming_4',['getIncoming',['../classVertex.html#a84b20dae22321e5a729606885357b015',1,'Vertex']]],
+  ['getindegree_5',['getIndegree',['../classVertex.html#ad7348af9376d4b9ada5ceeca3bd1b2b7',1,'Vertex']]],
+  ['getlat_6',['getLat',['../classVertex.html#a07d5a941613668a4005bb5cc63ac36dd',1,'Vertex']]],
+  ['getlon_7',['getLon',['../classVertex.html#a4f1d1050bf269894f151805d44867182',1,'Vertex']]],
+  ['getnumvertex_8',['getNumVertex',['../classGraph.html#a934161856b70bdbddf3a65649dc5c96c',1,'Graph']]],
+  ['getorig_9',['getOrig',['../classEdge.html#a6e8b08e91c0694b40edff0432fb612eb',1,'Edge']]],
+  ['getoutgoing_10',['getOutgoing',['../classVertex.html#a239b5c3769a4795c422f95ba1ccbff3e',1,'Vertex']]],
+  ['getpath_11',['getPath',['../classVertex.html#a6e120e57da6af94892fae44e05868794',1,'Vertex']]],
+  ['getreverse_12',['getReverse',['../classEdge.html#a756d2d246aa5445d0f396626c7d4fd56',1,'Edge']]],
+  ['getvertexmap_13',['getVertexMap',['../classGraph.html#a6c561481b4dbc9c089eb349fc0c0fb95',1,'Graph']]],
+  ['getweight_14',['getWeight',['../classEdge.html#a1caaffca117bab3ff5b7387623a356f8',1,'Edge']]],
+  ['graph_15',['Graph',['../classGraph.html',1,'Graph'],['../classGraph.html#a90961be426ad80001cbc103b6385df31',1,'Graph::Graph()']]],
+  ['graph_16',['graph',['../classMenu.html#a2b279d51bfa387a7938f65eb59e9b437',1,'Menu']]],
+  ['graph_2ecpp_17',['Graph.cpp',['../Graph_8cpp.html',1,'']]],
+  ['graph_2eh_18',['Graph.h',['../Graph_8h.html',1,'']]],
+  ['graphtype_19',['GraphType',['../Menu_8h.html#a0c7c85309652245e03563b127f451f72',1,'Menu.h']]]
 ];

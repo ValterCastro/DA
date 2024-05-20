@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['queueindex_0',['queueIndex',['../class_vertex.html#a78ba760e405ba9f66129b3870065b48f',1,'Vertex']]]
+  ['weight_0',['weight',['../classEdge.html#ab158eed85f1b6514fcce44df783b39cc',1,'Edge']]]
 ];

@@ -19,7 +19,7 @@ public:
     Vertex(int id,string label);
     Vertex(int id,double longitude,double latitude);
 
-    bool operator<(Vertex & vertex) const; // // required by MutablePriorityQueue
+    bool operator<(Vertex & vertex) const;
 
     int getId() const;
     std::vector<Edge *> getAdj() const;

@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['nearestneighbor_0',['nearestNeighbor',['../class_graph.html#a78b8f75055384d32f66433e26bd5a1fb',1,'Graph::nearestNeighbor()'],['../_algoritmos_8cpp.html#a2140c0919a8426e2179469deb861d154',1,'nearestNeighbor(Vertex *root):&#160;Algoritmos.cpp'],['../_algoritmos_8h.html#a2140c0919a8426e2179469deb861d154',1,'nearestNeighbor(Vertex *root):&#160;Algoritmos.cpp']]]
+  ['operator_3c_0',['operator&lt;',['../classVertex.html#ad4ccd48170a1530ec1db5eb306357a74',1,'Vertex']]],
+  ['orig_1',['orig',['../classEdge.html#a48f1521d20ead8492fd1d184656862f5',1,'Edge']]]
 ];

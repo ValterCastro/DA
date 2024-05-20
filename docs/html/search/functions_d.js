@@ -1,10 +1,15 @@
 var searchData=
 [
-  ['readextragraphmenu_0',['ReadExtraGraphMenu',['../class_menu.html#a1080a682d41e4627a219040bf8782435',1,'Menu']]],
-  ['readgraph_1',['ReadGraph',['../class_menu.html#a53bfaa2256eeddaeaef614a249d45e96',1,'Menu']]],
-  ['readmenu_2',['ReadMenu',['../class_menu.html#ac0b39bfc979cab36d8d5d57094e5fcee',1,'Menu']]],
-  ['readrealworldgraphmenu_3',['ReadRealWorldGraphMenu',['../class_menu.html#ae132f74621b8ae01dddb38033ace4e19',1,'Menu']]],
-  ['readtoygraphmenu_4',['ReadToyGraphMenu',['../class_menu.html#aee666edfc35d2ca785a83b2c7f00db43',1,'Menu']]],
-  ['removeedge_5',['removeEdge',['../class_vertex.html#a1402fea0cca9e5d36fcc5fc4ccbde53e',1,'Vertex']]],
-  ['removeoutgoingedges_6',['removeOutgoingEdges',['../class_vertex.html#afcde6d707aff7627df7adde8d8b74a89',1,'Vertex']]]
+  ['setdist_0',['setDist',['../classVertex.html#a6939bef79bfe5fe5bf77d9fd1bd70085',1,'Vertex']]],
+  ['setid_1',['setId',['../classVertex.html#a0b766cc3ce251348af422c0773bb4359',1,'Vertex']]],
+  ['setindegree_2',['setIndegree',['../classVertex.html#aeb605d2ba9296a5e40496a9e37557d03',1,'Vertex']]],
+  ['setlabel_3',['setLabel',['../classVertex.html#a0b3dbdddcf75d62152264b3bbd995ade',1,'Vertex']]],
+  ['setlatitude_4',['setLatitude',['../classVertex.html#a577ed4a9032ff6240b8e6b972e654735',1,'Vertex']]],
+  ['setlongitude_5',['setLongitude',['../classVertex.html#a96d9dade409b0e65ca857f1f965b3fef',1,'Vertex']]],
+  ['setpath_6',['setPath',['../classVertex.html#abe4bc30005eec65e775d0cd51f456460',1,'Vertex']]],
+  ['setprocesssing_7',['setProcesssing',['../classVertex.html#a1c93b166281b30db2edef03791748ace',1,'Vertex']]],
+  ['setreverse_8',['setReverse',['../classEdge.html#a64881280015bd83702fe3b2c6234b7e5',1,'Edge']]],
+  ['setselected_9',['setSelected',['../classEdge.html#a8ab1cf2fe7fd16152d1dba3822853894',1,'Edge']]],
+  ['setvisited_10',['setVisited',['../classVertex.html#a15eeabbbb6d517af746ae137c6d5b595',1,'Vertex']]],
+  ['split_11',['split',['../Menu_8cpp.html#a233792dfb229dfb76da86d95fd5dc81b',1,'Menu.cpp']]]
 ];

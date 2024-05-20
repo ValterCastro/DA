@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['menu_0',['Menu',['../class_menu.html#ad466dd83355124a6ed958430450bfe94',1,'Menu']]],
-  ['minweight_1',['minWeight',['../class_graph.html#a69281f435a52c341937ffddca5555f32',1,'Graph']]],
-  ['mutablepriorityqueue_2',['MutablePriorityQueue',['../class_mutable_priority_queue.html#aba8ebedcbe659f2680bac229cfaca526',1,'MutablePriorityQueue']]]
+  ['nearestneighbor_0',['nearestNeighbor',['../Algoritmos_8cpp.html#a2140c0919a8426e2179469deb861d154',1,'nearestNeighbor(Vertex *root):&#160;Algoritmos.cpp'],['../Algoritmos_8h.html#a2140c0919a8426e2179469deb861d154',1,'nearestNeighbor(Vertex *root):&#160;Algoritmos.cpp']]]
 ];

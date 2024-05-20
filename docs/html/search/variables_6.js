@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['id_0',['id',['../class_vertex.html#a2e69697726190f50c7fc040fb1ddac7a',1,'Vertex']]],
-  ['incoming_1',['incoming',['../class_vertex.html#a2d41654d7aee77d99edacca6a923f4ee',1,'Vertex']]],
-  ['indegree_2',['indegree',['../class_vertex.html#a94ae99aae9b1a426feda5ecda70c598b',1,'Vertex']]]
+  ['path_0',['path',['../classVertex.html#a4e83821f961f6eb63ad210260ba0e1e2',1,'Vertex']]],
+  ['processing_1',['processing',['../classVertex.html#a305dc8fcad6e4c7ef2491409ca7ddaa4',1,'Vertex']]]
 ];
