@@ -1,0 +1,44 @@
+\doxysection{UFDS.\+cpp}
+\hypertarget{_u_f_d_s_8cpp_source}{}\label{_u_f_d_s_8cpp_source}\index{data\_structures/UFDS.cpp@{data\_structures/UFDS.cpp}}
+\mbox{\hyperlink{_u_f_d_s_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_u_f_d_s_8cpp_source_l00001}00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{_u_f_d_s_8cpp_source_l00002}00002\ \textcolor{comment}{\ *\ UFDS.cpp}}
+\DoxyCodeLine{\Hypertarget{_u_f_d_s_8cpp_source_l00003}00003\ \textcolor{comment}{\ *\ A\ simple\ implementation\ of\ Union-\/Find\ Disjoint\ Set\ (UFDS),\ required\ by\ Kruskal's\ algorithm.}}
+\DoxyCodeLine{\Hypertarget{_u_f_d_s_8cpp_source_l00004}00004\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{_u_f_d_s_8cpp_source_l00005}00005\ \textcolor{comment}{\ *\ Created\ on:\ 25/01/2022}}
+\DoxyCodeLine{\Hypertarget{_u_f_d_s_8cpp_source_l00006}00006\ \textcolor{comment}{\ *\ \ \ \ \ \ Author:\ Gonçalo\ Leão}}
+\DoxyCodeLine{\Hypertarget{_u_f_d_s_8cpp_source_l00007}00007\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{_u_f_d_s_8cpp_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{_u_f_d_s_8cpp_source_l00009}00009\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_u_f_d_s_8h}{UFDS.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_u_f_d_s_8cpp_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{_u_f_d_s_8cpp_source_l00011}\mbox{\hyperlink{class_u_f_d_s_a9daac3830c0769f08aceb6236f407248}{00011}}\ \mbox{\hyperlink{class_u_f_d_s_a9daac3830c0769f08aceb6236f407248}{UFDS::UFDS}}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ N)\ \{}
+\DoxyCodeLine{\Hypertarget{_u_f_d_s_8cpp_source_l00012}00012\ \ \ \ \ \mbox{\hyperlink{class_u_f_d_s_af77dd98a4e13936452f132a49b36e95a}{path}}.resize(N);}
+\DoxyCodeLine{\Hypertarget{_u_f_d_s_8cpp_source_l00013}00013\ \ \ \ \ \mbox{\hyperlink{class_u_f_d_s_afd7eb102f101a1c6f441a8e47aa5a399}{rank}}.resize(N);}
+\DoxyCodeLine{\Hypertarget{_u_f_d_s_8cpp_source_l00014}00014\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{long}\ i\ =\ 0;\ i\ <\ N;\ i++)\ \{}
+\DoxyCodeLine{\Hypertarget{_u_f_d_s_8cpp_source_l00015}00015\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_u_f_d_s_af77dd98a4e13936452f132a49b36e95a}{path}}[i]\ =\ i;}
+\DoxyCodeLine{\Hypertarget{_u_f_d_s_8cpp_source_l00016}00016\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_u_f_d_s_afd7eb102f101a1c6f441a8e47aa5a399}{rank}}[i]\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_u_f_d_s_8cpp_source_l00017}00017\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_u_f_d_s_8cpp_source_l00018}00018\ \}}
+\DoxyCodeLine{\Hypertarget{_u_f_d_s_8cpp_source_l00019}00019\ }
+\DoxyCodeLine{\Hypertarget{_u_f_d_s_8cpp_source_l00020}\mbox{\hyperlink{class_u_f_d_s_afe161413e4cd6702b2ca2f475eddeca0}{00020}}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{long}\ \mbox{\hyperlink{class_u_f_d_s_afe161413e4cd6702b2ca2f475eddeca0}{UFDS::findSet}}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ i)\ \{}
+\DoxyCodeLine{\Hypertarget{_u_f_d_s_8cpp_source_l00021}00021\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_u_f_d_s_af77dd98a4e13936452f132a49b36e95a}{path}}[i]\ !=\ i)\ \mbox{\hyperlink{class_u_f_d_s_af77dd98a4e13936452f132a49b36e95a}{path}}[i]\ =\ \mbox{\hyperlink{class_u_f_d_s_afe161413e4cd6702b2ca2f475eddeca0}{findSet}}(\mbox{\hyperlink{class_u_f_d_s_af77dd98a4e13936452f132a49b36e95a}{path}}[i]);}
+\DoxyCodeLine{\Hypertarget{_u_f_d_s_8cpp_source_l00022}00022\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_u_f_d_s_af77dd98a4e13936452f132a49b36e95a}{path}}[i];}
+\DoxyCodeLine{\Hypertarget{_u_f_d_s_8cpp_source_l00023}00023\ \}}
+\DoxyCodeLine{\Hypertarget{_u_f_d_s_8cpp_source_l00024}00024\ }
+\DoxyCodeLine{\Hypertarget{_u_f_d_s_8cpp_source_l00025}\mbox{\hyperlink{class_u_f_d_s_a793b0e0337223456401318c652f0cdd0}{00025}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_u_f_d_s_a793b0e0337223456401318c652f0cdd0}{UFDS::isSameSet}}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ i,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ j)\ \{}
+\DoxyCodeLine{\Hypertarget{_u_f_d_s_8cpp_source_l00026}00026\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_u_f_d_s_afe161413e4cd6702b2ca2f475eddeca0}{findSet}}(i)\ ==\ \mbox{\hyperlink{class_u_f_d_s_afe161413e4cd6702b2ca2f475eddeca0}{findSet}}(j);}
+\DoxyCodeLine{\Hypertarget{_u_f_d_s_8cpp_source_l00027}00027\ \}}
+\DoxyCodeLine{\Hypertarget{_u_f_d_s_8cpp_source_l00028}00028\ }
+\DoxyCodeLine{\Hypertarget{_u_f_d_s_8cpp_source_l00029}\mbox{\hyperlink{class_u_f_d_s_a0955e92d417b1bfbba94dc8c660f86d3}{00029}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_u_f_d_s_a0955e92d417b1bfbba94dc8c660f86d3}{UFDS::linkSets}}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ i,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ j)\ \{}
+\DoxyCodeLine{\Hypertarget{_u_f_d_s_8cpp_source_l00030}00030\ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{class_u_f_d_s_a793b0e0337223456401318c652f0cdd0}{isSameSet}}(i,\ j))\ \{}
+\DoxyCodeLine{\Hypertarget{_u_f_d_s_8cpp_source_l00031}00031\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{long}\ x\ =\ \mbox{\hyperlink{class_u_f_d_s_afe161413e4cd6702b2ca2f475eddeca0}{findSet}}(i),\ y\ =\ \mbox{\hyperlink{class_u_f_d_s_afe161413e4cd6702b2ca2f475eddeca0}{findSet}}(j);}
+\DoxyCodeLine{\Hypertarget{_u_f_d_s_8cpp_source_l00032}00032\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_u_f_d_s_afd7eb102f101a1c6f441a8e47aa5a399}{rank}}[x]\ >\ \mbox{\hyperlink{class_u_f_d_s_afd7eb102f101a1c6f441a8e47aa5a399}{rank}}[y])\ \mbox{\hyperlink{class_u_f_d_s_af77dd98a4e13936452f132a49b36e95a}{path}}[y]\ =\ x;\ \textcolor{comment}{//\ x\ becomes\ the\ root\ due\ to\ having\ a\ larger\ rank}}
+\DoxyCodeLine{\Hypertarget{_u_f_d_s_8cpp_source_l00033}00033\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{_u_f_d_s_8cpp_source_l00034}00034\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_u_f_d_s_af77dd98a4e13936452f132a49b36e95a}{path}}[x]\ =\ y;\ \textcolor{comment}{//\ y\ becomes\ the\ root\ due\ to\ having\ a\ larger\ rank,\ or\ ...}}
+\DoxyCodeLine{\Hypertarget{_u_f_d_s_8cpp_source_l00035}00035\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_u_f_d_s_afd7eb102f101a1c6f441a8e47aa5a399}{rank}}[x]\ ==\ \mbox{\hyperlink{class_u_f_d_s_afd7eb102f101a1c6f441a8e47aa5a399}{rank}}[y])\ \mbox{\hyperlink{class_u_f_d_s_afd7eb102f101a1c6f441a8e47aa5a399}{rank}}[y]++;\ \textcolor{comment}{//\ ...\ due\ to\ both\ nodes\ having\ the\ same\ rank\ (in\ order\ to\ break\ the\ tie)}}
+\DoxyCodeLine{\Hypertarget{_u_f_d_s_8cpp_source_l00036}00036\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_u_f_d_s_8cpp_source_l00037}00037\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_u_f_d_s_8cpp_source_l00038}00038\ \}}
+
+\end{DoxyCode}

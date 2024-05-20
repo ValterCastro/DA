@@ -1,0 +1,133 @@
+\doxysection{Heap Class Reference}
+\hypertarget{class_heap}{}\label{class_heap}\index{Heap@{Heap}}
+
+
+{\ttfamily \#include $<$Heap.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_heap_a6595efd3562a6334d2f5471c2b3b7cb4}{Heap}} ()
+\item 
+\mbox{\hyperlink{class_heap_aad54cb57cd3f33a1493aef602d787463}{Heap}} (std\+::vector$<$ int $>$ v)
+\item 
+void \mbox{\hyperlink{class_heap_a4c6a62f67cebbe16be684d464b2e19f0}{insert}} (int x)
+\item 
+int \mbox{\hyperlink{class_heap_acbf8935a8c01b3188d16ffca0011824b}{extract\+Min}} ()
+\item 
+bool \mbox{\hyperlink{class_heap_a576331b44a7f81f24b324261b1714732}{empty}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_heap_ad52cc204b6ee2b666a8c2e30ab1477c9}{heapify\+Up}} (unsigned int i)
+\item 
+void \mbox{\hyperlink{class_heap_a423e81df2c4800f42e5827abb631c095}{heapify\+Down}} (unsigned int i)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ int $>$ \mbox{\hyperlink{class_heap_a87f0e00ea91195bbf83b6784e90affbd}{elems}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{_heap_8h_source_l00009}{9}} of file \mbox{\hyperlink{_heap_8h_source}{Heap.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_heap_a6595efd3562a6334d2f5471c2b3b7cb4}\label{class_heap_a6595efd3562a6334d2f5471c2b3b7cb4} 
+\index{Heap@{Heap}!Heap@{Heap}}
+\index{Heap@{Heap}!Heap@{Heap}}
+\doxysubsubsection{\texorpdfstring{Heap()}{Heap()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Heap\+::\+Heap (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_heap_8cpp_source_l00010}{10}} of file \mbox{\hyperlink{_heap_8cpp_source}{Heap.\+cpp}}.
+
+\Hypertarget{class_heap_aad54cb57cd3f33a1493aef602d787463}\label{class_heap_aad54cb57cd3f33a1493aef602d787463} 
+\index{Heap@{Heap}!Heap@{Heap}}
+\index{Heap@{Heap}!Heap@{Heap}}
+\doxysubsubsection{\texorpdfstring{Heap()}{Heap()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Heap\+::\+Heap (\begin{DoxyParamCaption}\item[{std\+::vector$<$ int $>$}]{v }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_heap_8cpp_source_l00016}{16}} of file \mbox{\hyperlink{_heap_8cpp_source}{Heap.\+cpp}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_heap_a576331b44a7f81f24b324261b1714732}\label{class_heap_a576331b44a7f81f24b324261b1714732} 
+\index{Heap@{Heap}!empty@{empty}}
+\index{empty@{empty}!Heap@{Heap}}
+\doxysubsubsection{\texorpdfstring{empty()}{empty()}}
+{\footnotesize\ttfamily bool Heap\+::empty (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_heap_8cpp_source_l00030}{30}} of file \mbox{\hyperlink{_heap_8cpp_source}{Heap.\+cpp}}.
+
+\Hypertarget{class_heap_acbf8935a8c01b3188d16ffca0011824b}\label{class_heap_acbf8935a8c01b3188d16ffca0011824b} 
+\index{Heap@{Heap}!extractMin@{extractMin}}
+\index{extractMin@{extractMin}!Heap@{Heap}}
+\doxysubsubsection{\texorpdfstring{extractMin()}{extractMin()}}
+{\footnotesize\ttfamily int Heap\+::extract\+Min (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_heap_8cpp_source_l00034}{34}} of file \mbox{\hyperlink{_heap_8cpp_source}{Heap.\+cpp}}.
+
+\Hypertarget{class_heap_a423e81df2c4800f42e5827abb631c095}\label{class_heap_a423e81df2c4800f42e5827abb631c095} 
+\index{Heap@{Heap}!heapifyDown@{heapifyDown}}
+\index{heapifyDown@{heapifyDown}!Heap@{Heap}}
+\doxysubsubsection{\texorpdfstring{heapifyDown()}{heapifyDown()}}
+{\footnotesize\ttfamily void Heap\+::heapify\+Down (\begin{DoxyParamCaption}\item[{unsigned int}]{i }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_heap_8cpp_source_l00056}{56}} of file \mbox{\hyperlink{_heap_8cpp_source}{Heap.\+cpp}}.
+
+\Hypertarget{class_heap_ad52cc204b6ee2b666a8c2e30ab1477c9}\label{class_heap_ad52cc204b6ee2b666a8c2e30ab1477c9} 
+\index{Heap@{Heap}!heapifyUp@{heapifyUp}}
+\index{heapifyUp@{heapifyUp}!Heap@{Heap}}
+\doxysubsubsection{\texorpdfstring{heapifyUp()}{heapifyUp()}}
+{\footnotesize\ttfamily void Heap\+::heapify\+Up (\begin{DoxyParamCaption}\item[{unsigned int}]{i }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_heap_8cpp_source_l00047}{47}} of file \mbox{\hyperlink{_heap_8cpp_source}{Heap.\+cpp}}.
+
+\Hypertarget{class_heap_a4c6a62f67cebbe16be684d464b2e19f0}\label{class_heap_a4c6a62f67cebbe16be684d464b2e19f0} 
+\index{Heap@{Heap}!insert@{insert}}
+\index{insert@{insert}!Heap@{Heap}}
+\doxysubsubsection{\texorpdfstring{insert()}{insert()}}
+{\footnotesize\ttfamily void Heap\+::insert (\begin{DoxyParamCaption}\item[{int}]{x }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_heap_8cpp_source_l00042}{42}} of file \mbox{\hyperlink{_heap_8cpp_source}{Heap.\+cpp}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_heap_a87f0e00ea91195bbf83b6784e90affbd}\label{class_heap_a87f0e00ea91195bbf83b6784e90affbd} 
+\index{Heap@{Heap}!elems@{elems}}
+\index{elems@{elems}!Heap@{Heap}}
+\doxysubsubsection{\texorpdfstring{elems}{elems}}
+{\footnotesize\ttfamily std\+::vector$<$int$>$ Heap\+::elems\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_heap_8h_source_l00017}{17}} of file \mbox{\hyperlink{_heap_8h_source}{Heap.\+h}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+data\+\_\+structures/\mbox{\hyperlink{_heap_8h}{Heap.\+h}}\item 
+data\+\_\+structures/\mbox{\hyperlink{_heap_8cpp}{Heap.\+cpp}}\end{DoxyCompactItemize}

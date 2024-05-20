@@ -206,7 +206,7 @@ std::vector<std::string> split(const std::string& str, char delimiter) {
     return tokens;
 }
 
-int Menu::ReadGraph(const std::string &graph, GraphType type) {
+int Menu::ReadGraph(std::string &graph, GraphType type) {
     std::ifstream file(graph);
 
     if (!file.is_open()) {
