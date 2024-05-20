@@ -7,6 +7,7 @@
 #include "vector"
 #include "Menu.h"
 #include "Graph.h"
+#include <cstdlib>
 
 using namespace std;
 
@@ -22,7 +23,9 @@ int Menu::ReadMenu() {
     cout << "------------------------------------------------------------------\n";
     cout << "| 2 - Read Real-world-Graphs                                     |\n";
     cout << "------------------------------------------------------------------\n";
-    cout << "| 3 - Choose Algorithm                                           |\n";
+    cout << "| 3 - Read Extra-Graphs                                          |\n";
+    cout << "------------------------------------------------------------------\n";
+    cout << "| 4 - Choose Algorithm                                           |\n";
     cout << "------------------------------------------------------------------\n";
     cout << "| 0 - Exit                                                       |\n";
     cout << "------------------------------------------------------------------\n";
@@ -41,6 +44,9 @@ int Menu::ReadMenu() {
             ReadRealWorldGraphMenu();
             break;
         case 3:
+            ReadExtraGraphMenu();
+            break;
+        case 4:
             AlgorithmMenu(option);
             break;
         default:
@@ -50,7 +56,40 @@ int Menu::ReadMenu() {
     return 0;
 }
 
+void Menu::ReadExtraGraphMenu() {
+
+    std::string extra_nodes = "../Extra_Fully_Connected_Graphs/nodes.csv";
+    std::string extra_edges_25 = "../Extra_Fully_Connected_Graphs/edges_25.csv";
+    std::string extra_edges_50 = "../Extra_Fully_Connected_Graphs/edges_50.csv";
+    std::string extra_edges_75 = "../Extra_Fully_Connected_Graphs/edges_75.csv";
+    std::string extra_edges_100 = "../Extra_Fully_Connected_Graphs/edges_100.csv";
+    std::string extra_edges_200 = "../Extra_Fully_Connected_Graphs/edges_200.csv";
+    std::string extra_edges_300 = "../Extra_Fully_Connected_Graphs/edges_300.csv";
+    std::string extra_edges_400 = "../Extra_Fully_Connected_Graphs/edges_400.csv";
+    std::string extra_edges_500 = "../Extra_Fully_Connected_Graphs/edges_500.csv";
+    std::string extra_edges_600 = "../Extra_Fully_Connected_Graphs/edges_600.csv";
+    std::string extra_edges_700 = "../Extra_Fully_Connected_Graphs/edges_700.csv";
+    std::string extra_edges_800 = "../Extra_Fully_Connected_Graphs/edges_800.csv";
+    std::string extra_edges_900 = "../Extra_Fully_Connected_Graphs/edges_900.csv";
+
+    ReadGraph(extra_nodes, "Extra_nodes");
+    ReadGraph(extra_edges_25, "Extra_edges");
+    ReadGraph(extra_edges_50, "Extra_edges");
+    ReadGraph(extra_edges_75, "Extra_edges");
+    ReadGraph(extra_edges_100, "Extra_edges");
+    ReadGraph(extra_edges_200, "Extra_edges");
+    ReadGraph(extra_edges_300, "Extra_edges");
+    ReadGraph(extra_edges_400, "Extra_edges");
+    ReadGraph(extra_edges_500, "Extra_edges");
+    ReadGraph(extra_edges_600, "Extra_edges");
+    ReadGraph(extra_edges_700, "Extra_edges");
+    ReadGraph(extra_edges_800, "Extra_edges");
+    ReadGraph(extra_edges_900, "Extra_edges");
+
+}
+
 void Menu::AlgorithmMenu(int option) {
+
     cout << "------------------------------------------------------------------\n";
     cout << "|          Project II Ocean Shipping && Urban Deliveries         |\n";
     cout << "------------------------------------------------------------------\n";
@@ -181,6 +220,29 @@ int Menu::ReadGraph(std::string graph, std::string type) {
                         triangular_heuristic->addEdge(aux[0],aux[1], stod(col));
                     }
                 }
+
+            }
+            else if(type == "Extra-nodes"){
+                if(i == 0){
+                    extra->addVertex(stoi(col));
+                    triangle_id = stoi(col);
+                }
+                else if(i == 1){
+                    extra->findVertex(triangle_id)->setLongitude(stod(col));
+                }
+                else{
+                    extra->findVertex(triangle_id)->setLatitude(stod(col));
+                }
+
+            }
+            else{
+                if(i < 2){
+                    //backtrack->addVertex(stoi(col));
+                    aux.push_back(stoi(col));
+                }
+                else{
+                    extra->addEdge(aux[0],aux[1], stod(col));
+                }
             }
 
             //std::cout << col << " ";
@@ -191,23 +253,7 @@ int Menu::ReadGraph(std::string graph, std::string type) {
     }
 
 
-    cout << "------------------------------------------------------------------\n";
-    cout << "| 1 - Go back                                                    |\n";
-    cout << "------------------------------------------------------------------\n";
-    cout << "| Continue                                                       |\n";
-    cout << "------------------------------------------------------------------\n";
-
-    int option;
-    cin >> option;
-
-    switch(option){
-        case 1:
-            ReadMenu();
-            break;
-        default:
-            ReadMenu();
-            break;
-    }
+    ReadMenu();
     return 0;
 }
 

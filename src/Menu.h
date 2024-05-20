@@ -12,12 +12,14 @@ private:
     int ReadGraph(std::string graph, std::string type);
     void ReadToyGraphMenu();
     void ReadRealWorldGraphMenu();
+    void ReadExtraGraphMenu();
     void AlgorithmMenu(int option);
 
 
 public:
     Graph* backtrack = new Graph();
     Graph* triangular_heuristic = new Graph();
+    Graph* extra = new Graph();
     Menu();
     int ReadMenu();
 };
