@@ -1,0 +1,132 @@
+\doxysection{Algoritmos.\+cpp}
+\hypertarget{_algoritmos_8cpp_source}{}\label{_algoritmos_8cpp_source}\index{src/Algoritmos.cpp@{src/Algoritmos.cpp}}
+\mbox{\hyperlink{_algoritmos_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_algoritmos_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_algoritmos_8h}{Algoritmos.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_algoritmos_8cpp_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{_algoritmos_8cpp_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{_algoritmos_8cpp_source_l00004}\mbox{\hyperlink{_algoritmos_8cpp_aceb5640b662acd25284e80ae1a9dc0a0}{00004}}\ vector<Edge*>\ \mbox{\hyperlink{_algoritmos_8cpp_aceb5640b662acd25284e80ae1a9dc0a0}{prim}}(\mbox{\hyperlink{class_graph}{Graph}}\ \&graph,\ \textcolor{keywordtype}{int}\ root)\{}
+\DoxyCodeLine{\Hypertarget{_algoritmos_8cpp_source_l00005}00005\ \ \ \ \ vector<Edge*>\ mst;}
+\DoxyCodeLine{\Hypertarget{_algoritmos_8cpp_source_l00006}00006\ }
+\DoxyCodeLine{\Hypertarget{_algoritmos_8cpp_source_l00007}00007\ \ \ \ \ \textcolor{keyword}{auto}\ cmp\ =\ [](\mbox{\hyperlink{class_edge}{Edge}}\ *left,\ \ \mbox{\hyperlink{class_edge}{Edge}}\ *right)-\/>\textcolor{keywordtype}{bool}\ \{\ \textcolor{keywordflow}{return}\ left-\/>\mbox{\hyperlink{class_edge_a1caaffca117bab3ff5b7387623a356f8}{getWeight}}()\ <\ right-\/>getWeight();\ \};}
+\DoxyCodeLine{\Hypertarget{_algoritmos_8cpp_source_l00008}00008\ \ \ \ \ priority\_queue<Edge*,\ vector<Edge*>,\ \textcolor{keyword}{decltype}(cmp)>\ pq(cmp);}
+\DoxyCodeLine{\Hypertarget{_algoritmos_8cpp_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{_algoritmos_8cpp_source_l00010}00010\ \ \ \ \ \mbox{\hyperlink{class_vertex}{Vertex}}*\ source\ =\ graph.\mbox{\hyperlink{class_graph_a05c45e4efdf867792139ddf3628c0b60}{findVertex}}(root);}
+\DoxyCodeLine{\Hypertarget{_algoritmos_8cpp_source_l00011}00011\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \&pair\ :\ graph.\mbox{\hyperlink{class_graph_a6c561481b4dbc9c089eb349fc0c0fb95}{getVertexMap}}())\ pair.second-\/>\mbox{\hyperlink{class_vertex_a15eeabbbb6d517af746ae137c6d5b595}{setVisited}}(\textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{_algoritmos_8cpp_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{_algoritmos_8cpp_source_l00013}00013\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ \&e:\ source-\/>\mbox{\hyperlink{class_vertex_a9858f2aa388d2bfb49d9df8f4504b5a0}{getAdj}}())\ pq.push(e);}
+\DoxyCodeLine{\Hypertarget{_algoritmos_8cpp_source_l00014}00014\ \ \ \ \ source-\/>\mbox{\hyperlink{class_vertex_a15eeabbbb6d517af746ae137c6d5b595}{setVisited}}(\textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{_algoritmos_8cpp_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{_algoritmos_8cpp_source_l00016}00016\ \ \ \ \ \textcolor{keywordflow}{while}\ (!pq.empty())\{}
+\DoxyCodeLine{\Hypertarget{_algoritmos_8cpp_source_l00017}00017\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_edge}{Edge}}*\ e\ =\ pq.top();\ pq.pop();}
+\DoxyCodeLine{\Hypertarget{_algoritmos_8cpp_source_l00018}00018\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_vertex}{Vertex}}\ *v\ =\ e-\/>\mbox{\hyperlink{class_edge_a5cda44e9ba257b03963a1ac301371a59}{getDest}}();}
+\DoxyCodeLine{\Hypertarget{_algoritmos_8cpp_source_l00019}00019\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (v-\/>\mbox{\hyperlink{class_vertex_aa4bd82105b85ee53a917391f4811cd8a}{isVisited}}())\ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{\Hypertarget{_algoritmos_8cpp_source_l00020}00020\ \ \ \ \ \ \ \ \ v-\/>\mbox{\hyperlink{class_vertex_a15eeabbbb6d517af746ae137c6d5b595}{setVisited}}(\textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{_algoritmos_8cpp_source_l00021}00021\ \ \ \ \ \ \ \ \ mst.push\_back(e);}
+\DoxyCodeLine{\Hypertarget{_algoritmos_8cpp_source_l00022}00022\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ edge:\ v-\/>\mbox{\hyperlink{class_vertex_a9858f2aa388d2bfb49d9df8f4504b5a0}{getAdj}}())}
+\DoxyCodeLine{\Hypertarget{_algoritmos_8cpp_source_l00023}00023\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!edge-\/>getDest()-\/>isVisited())}
+\DoxyCodeLine{\Hypertarget{_algoritmos_8cpp_source_l00024}00024\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ pq.push(edge);}
+\DoxyCodeLine{\Hypertarget{_algoritmos_8cpp_source_l00025}00025\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_algoritmos_8cpp_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{_algoritmos_8cpp_source_l00027}00027\ \ \ \ \ \textcolor{keywordflow}{return}\ mst;}
+\DoxyCodeLine{\Hypertarget{_algoritmos_8cpp_source_l00028}00028\ \}}
+\DoxyCodeLine{\Hypertarget{_algoritmos_8cpp_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{_algoritmos_8cpp_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{_algoritmos_8cpp_source_l00031}\mbox{\hyperlink{_algoritmos_8cpp_a790001ecdc9d8f5a3865e0ccd7612cda}{00031}}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{_algoritmos_8cpp_a790001ecdc9d8f5a3865e0ccd7612cda}{haversine}}(\mbox{\hyperlink{class_vertex}{Vertex}}\ *v1,\ \mbox{\hyperlink{class_vertex}{Vertex}}\ *v2)\ \{}
+\DoxyCodeLine{\Hypertarget{_algoritmos_8cpp_source_l00032}00032\ \ \ \ \ \textcolor{keywordtype}{double}\ latDiff\ =\ (v2-\/>\mbox{\hyperlink{class_vertex_a07d5a941613668a4005bb5cc63ac36dd}{getLat}}()\ -\/\ v1-\/>\mbox{\hyperlink{class_vertex_a07d5a941613668a4005bb5cc63ac36dd}{getLat}}())\ *\ M\_PI\ /\ 180;}
+\DoxyCodeLine{\Hypertarget{_algoritmos_8cpp_source_l00033}00033\ \ \ \ \ \textcolor{keywordtype}{double}\ lonDiff\ =\ (v2-\/>\mbox{\hyperlink{class_vertex_a4f1d1050bf269894f151805d44867182}{getLon}}()\ -\/\ v1-\/>\mbox{\hyperlink{class_vertex_a4f1d1050bf269894f151805d44867182}{getLon}}())\ *\ M\_PI\ /\ 180;}
+\DoxyCodeLine{\Hypertarget{_algoritmos_8cpp_source_l00034}00034\ }
+\DoxyCodeLine{\Hypertarget{_algoritmos_8cpp_source_l00035}00035\ \ \ \ \ \textcolor{keywordtype}{double}\ a\ =\ sin(latDiff\ /\ 2.00)\ *\ sin(latDiff/2.00)\ +}
+\DoxyCodeLine{\Hypertarget{_algoritmos_8cpp_source_l00036}00036\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cos(v1-\/>\mbox{\hyperlink{class_vertex_a07d5a941613668a4005bb5cc63ac36dd}{getLat}}()\ *\ M\_PI\ /\ 180)\ *\ cos(v2-\/>\mbox{\hyperlink{class_vertex_a07d5a941613668a4005bb5cc63ac36dd}{getLat}}()\ *\ M\_PI\ /\ 180)\ *}
+\DoxyCodeLine{\Hypertarget{_algoritmos_8cpp_source_l00037}00037\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ sin(lonDiff/2.00)\ *sin(lonDiff/2.00);}
+\DoxyCodeLine{\Hypertarget{_algoritmos_8cpp_source_l00038}00038\ }
+\DoxyCodeLine{\Hypertarget{_algoritmos_8cpp_source_l00039}00039\ \ \ \ \ \textcolor{keywordtype}{double}\ c\ =\ 2.00\ *\ atan2(sqrt(a),\ sqrt(1-\/a));}
+\DoxyCodeLine{\Hypertarget{_algoritmos_8cpp_source_l00040}00040\ }
+\DoxyCodeLine{\Hypertarget{_algoritmos_8cpp_source_l00041}00041\ \ \ \ \ \textcolor{keywordtype}{double}\ distance\ =\ 6371000.0\ *\ c;}
+\DoxyCodeLine{\Hypertarget{_algoritmos_8cpp_source_l00042}00042\ }
+\DoxyCodeLine{\Hypertarget{_algoritmos_8cpp_source_l00043}00043\ \ \ \ \ \textcolor{keywordflow}{return}\ distance;}
+\DoxyCodeLine{\Hypertarget{_algoritmos_8cpp_source_l00044}00044\ \}}
+\DoxyCodeLine{\Hypertarget{_algoritmos_8cpp_source_l00045}00045\ }
+\DoxyCodeLine{\Hypertarget{_algoritmos_8cpp_source_l00046}\mbox{\hyperlink{_algoritmos_8cpp_a7177bfe0edb13c309ec6c2d3716dfcfb}{00046}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_algoritmos_8cpp_a7177bfe0edb13c309ec6c2d3716dfcfb}{dfsOnMstHelper}}(\textcolor{keyword}{const}\ vector<Edge*>\ \&mst,\ \mbox{\hyperlink{class_vertex}{Vertex}}\ *root,\ vector<Vertex*>\ \&path)\ \{}
+\DoxyCodeLine{\Hypertarget{_algoritmos_8cpp_source_l00047}00047\ \ \ \ \ root-\/>\mbox{\hyperlink{class_vertex_a15eeabbbb6d517af746ae137c6d5b595}{setVisited}}(\textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{_algoritmos_8cpp_source_l00048}00048\ \ \ \ \ path.push\_back(root);}
+\DoxyCodeLine{\Hypertarget{_algoritmos_8cpp_source_l00049}00049\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ \&e:\ mst)\{}
+\DoxyCodeLine{\Hypertarget{_algoritmos_8cpp_source_l00050}00050\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!e-\/>getDest()-\/>isVisited()\ \&\&\ e-\/>getOrig()\ ==\ root)\ \{}
+\DoxyCodeLine{\Hypertarget{_algoritmos_8cpp_source_l00051}00051\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_algoritmos_8cpp_a7177bfe0edb13c309ec6c2d3716dfcfb}{dfsOnMstHelper}}(mst,\ e-\/>getDest(),\ path);}
+\DoxyCodeLine{\Hypertarget{_algoritmos_8cpp_source_l00052}00052\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_algoritmos_8cpp_source_l00053}00053\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_algoritmos_8cpp_source_l00054}00054\ \}}
+\DoxyCodeLine{\Hypertarget{_algoritmos_8cpp_source_l00055}00055\ }
+\DoxyCodeLine{\Hypertarget{_algoritmos_8cpp_source_l00056}\mbox{\hyperlink{_algoritmos_8cpp_af0a087495d508116af0d07be09dea82c}{00056}}\ vector<Vertex*>\ \mbox{\hyperlink{_algoritmos_8cpp_af0a087495d508116af0d07be09dea82c}{dfsOnMst}}(\textcolor{keyword}{const}\ vector<Edge*>\ \&mst,\ \mbox{\hyperlink{class_vertex}{Vertex}}\ *root)\ \{}
+\DoxyCodeLine{\Hypertarget{_algoritmos_8cpp_source_l00057}00057\ \ \ \ \ \textcolor{keywordflow}{for}\ (\mbox{\hyperlink{class_edge}{Edge}}\ *e\ :\ mst)\ \{}
+\DoxyCodeLine{\Hypertarget{_algoritmos_8cpp_source_l00058}00058\ \ \ \ \ \ \ \ \ e-\/>getOrig()-\/>setVisited(\textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{_algoritmos_8cpp_source_l00059}00059\ \ \ \ \ \ \ \ \ e-\/>getDest()-\/>setVisited(\textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{_algoritmos_8cpp_source_l00060}00060\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_algoritmos_8cpp_source_l00061}00061\ }
+\DoxyCodeLine{\Hypertarget{_algoritmos_8cpp_source_l00062}00062\ \ \ \ \ vector<Vertex*>\ path;}
+\DoxyCodeLine{\Hypertarget{_algoritmos_8cpp_source_l00063}00063\ \ \ \ \ \mbox{\hyperlink{_algoritmos_8cpp_a7177bfe0edb13c309ec6c2d3716dfcfb}{dfsOnMstHelper}}(mst,\ root,\ path);}
+\DoxyCodeLine{\Hypertarget{_algoritmos_8cpp_source_l00064}00064\ }
+\DoxyCodeLine{\Hypertarget{_algoritmos_8cpp_source_l00065}00065\ \ \ \ \ \textcolor{keywordflow}{return}\ path;}
+\DoxyCodeLine{\Hypertarget{_algoritmos_8cpp_source_l00066}00066\ \}}
+\DoxyCodeLine{\Hypertarget{_algoritmos_8cpp_source_l00067}00067\ }
+\DoxyCodeLine{\Hypertarget{_algoritmos_8cpp_source_l00068}00068\ }
+\DoxyCodeLine{\Hypertarget{_algoritmos_8cpp_source_l00069}00069\ }
+\DoxyCodeLine{\Hypertarget{_algoritmos_8cpp_source_l00070}\mbox{\hyperlink{_algoritmos_8cpp_ae4f503042ac661e5cf8e1a6be13ae2f8}{00070}}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{_algoritmos_8cpp_ae4f503042ac661e5cf8e1a6be13ae2f8}{totalDistance}}(\textcolor{keyword}{const}\ vector<Vertex*>\ \&path)\ \{}
+\DoxyCodeLine{\Hypertarget{_algoritmos_8cpp_source_l00071}00071\ \ \ \ \ \textcolor{keyword}{auto}\ findEdge\ =\ [](\mbox{\hyperlink{class_vertex}{Vertex}}\ *v1,\ \mbox{\hyperlink{class_vertex}{Vertex}}\ *v2)-\/>\mbox{\hyperlink{class_edge}{Edge}}*\ \{}
+\DoxyCodeLine{\Hypertarget{_algoritmos_8cpp_source_l00072}00072\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ edge\ =\ find\_if(v1-\/>\mbox{\hyperlink{class_vertex_a9858f2aa388d2bfb49d9df8f4504b5a0}{getAdj}}().begin(),\ v1-\/>\mbox{\hyperlink{class_vertex_a9858f2aa388d2bfb49d9df8f4504b5a0}{getAdj}}().end(),\ [v2](\mbox{\hyperlink{class_edge}{Edge}}\ *cmp)-\/>bool\ \{\ return\ cmp-\/>getDest()\ ==\ v2;\ \});}
+\DoxyCodeLine{\Hypertarget{_algoritmos_8cpp_source_l00073}00073\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ edge\ ==\ v1-\/>\mbox{\hyperlink{class_vertex_a9858f2aa388d2bfb49d9df8f4504b5a0}{getAdj}}().end()\ ?\ nullptr\ :\ *edge;}
+\DoxyCodeLine{\Hypertarget{_algoritmos_8cpp_source_l00074}00074\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{_algoritmos_8cpp_source_l00075}00075\ }
+\DoxyCodeLine{\Hypertarget{_algoritmos_8cpp_source_l00076}00076\ \ \ \ \ \textcolor{keywordtype}{double}\ total\ =\ 0.0;}
+\DoxyCodeLine{\Hypertarget{_algoritmos_8cpp_source_l00077}00077\ }
+\DoxyCodeLine{\Hypertarget{_algoritmos_8cpp_source_l00078}00078\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ vertexItr\ =\ next(path.begin());\ vertexItr\ !=\ path.end();\ vertexItr++)\ \{}
+\DoxyCodeLine{\Hypertarget{_algoritmos_8cpp_source_l00079}00079\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_vertex}{Vertex}}\ *v1\ =\ *prev(vertexItr);}
+\DoxyCodeLine{\Hypertarget{_algoritmos_8cpp_source_l00080}00080\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_vertex}{Vertex}}\ *v2\ =\ *vertexItr;}
+\DoxyCodeLine{\Hypertarget{_algoritmos_8cpp_source_l00081}00081\ }
+\DoxyCodeLine{\Hypertarget{_algoritmos_8cpp_source_l00082}00082\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_edge}{Edge}}\ *common\ =\ findEdge(v1,\ v2);}
+\DoxyCodeLine{\Hypertarget{_algoritmos_8cpp_source_l00083}00083\ \ \ \ \ \ \ \ \ total\ +=\ common\ ?\ common-\/>\mbox{\hyperlink{class_edge_a1caaffca117bab3ff5b7387623a356f8}{getWeight}}()\ :\ \mbox{\hyperlink{_algoritmos_8cpp_a790001ecdc9d8f5a3865e0ccd7612cda}{haversine}}(v1,\ v2);}
+\DoxyCodeLine{\Hypertarget{_algoritmos_8cpp_source_l00084}00084\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_algoritmos_8cpp_source_l00085}00085\ }
+\DoxyCodeLine{\Hypertarget{_algoritmos_8cpp_source_l00086}00086\ \ \ \ \ \mbox{\hyperlink{class_edge}{Edge}}\ *common\ =\ findEdge(path.back(),\ path[0]);}
+\DoxyCodeLine{\Hypertarget{_algoritmos_8cpp_source_l00087}00087\ \ \ \ \ total\ +=\ common\ ?\ common-\/>\mbox{\hyperlink{class_edge_a1caaffca117bab3ff5b7387623a356f8}{getWeight}}()\ :\ \mbox{\hyperlink{_algoritmos_8cpp_a790001ecdc9d8f5a3865e0ccd7612cda}{haversine}}(path.back(),\ path[0]);}
+\DoxyCodeLine{\Hypertarget{_algoritmos_8cpp_source_l00088}00088\ }
+\DoxyCodeLine{\Hypertarget{_algoritmos_8cpp_source_l00089}00089\ \ \ \ \ \textcolor{keywordflow}{return}\ total;}
+\DoxyCodeLine{\Hypertarget{_algoritmos_8cpp_source_l00090}00090\ \}}
+\DoxyCodeLine{\Hypertarget{_algoritmos_8cpp_source_l00091}00091\ }
+\DoxyCodeLine{\Hypertarget{_algoritmos_8cpp_source_l00092}\mbox{\hyperlink{_algoritmos_8cpp_a8238fb20dac4f63003fd0a53b813ff0c}{00092}}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{_algoritmos_8cpp_a8238fb20dac4f63003fd0a53b813ff0c}{triangularApproximation}}(\mbox{\hyperlink{class_graph}{Graph}}\ \&graph)\ \{}
+\DoxyCodeLine{\Hypertarget{_algoritmos_8cpp_source_l00093}00093\ \ \ \ \ vector<Edge*>\ mst\ =\ \mbox{\hyperlink{_algoritmos_8cpp_aceb5640b662acd25284e80ae1a9dc0a0}{prim}}(graph,\ 0);}
+\DoxyCodeLine{\Hypertarget{_algoritmos_8cpp_source_l00094}00094\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{_algoritmos_8cpp_ae4f503042ac661e5cf8e1a6be13ae2f8}{totalDistance}}(\mbox{\hyperlink{_algoritmos_8cpp_af0a087495d508116af0d07be09dea82c}{dfsOnMst}}(mst,\ mst[0]-\/>getOrig()));}
+\DoxyCodeLine{\Hypertarget{_algoritmos_8cpp_source_l00095}00095\ \}}
+\DoxyCodeLine{\Hypertarget{_algoritmos_8cpp_source_l00096}00096\ }
+\DoxyCodeLine{\Hypertarget{_algoritmos_8cpp_source_l00097}\mbox{\hyperlink{_algoritmos_8cpp_a2140c0919a8426e2179469deb861d154}{00097}}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{_algoritmos_8cpp_a2140c0919a8426e2179469deb861d154}{nearestNeighbor}}(\mbox{\hyperlink{class_vertex}{Vertex}}*\ root)\ \{}
+\DoxyCodeLine{\Hypertarget{_algoritmos_8cpp_source_l00098}00098\ \ \ \ \ \textcolor{keyword}{auto}\ getShortestUnvisitedEdge\ =\ [](\textcolor{keyword}{const}\ vector<Edge*>\ \&adj)-\/>\mbox{\hyperlink{class_edge}{Edge}}*\ \{}
+\DoxyCodeLine{\Hypertarget{_algoritmos_8cpp_source_l00099}00099\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_edge}{Edge}}\ *minEdge\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{_algoritmos_8cpp_source_l00100}00100\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\mbox{\hyperlink{class_edge}{Edge}}\ *cmp\ :\ adj)\ \{}
+\DoxyCodeLine{\Hypertarget{_algoritmos_8cpp_source_l00101}00101\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (cmp-\/>getDest()-\/>isVisited())\ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{\Hypertarget{_algoritmos_8cpp_source_l00102}00102\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (minEdge\ ==\ \textcolor{keyword}{nullptr})\ minEdge\ =\ cmp;}
+\DoxyCodeLine{\Hypertarget{_algoritmos_8cpp_source_l00103}00103\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ minEdge\ =\ min(minEdge-\/>\mbox{\hyperlink{class_edge_a1caaffca117bab3ff5b7387623a356f8}{getWeight}}(),\ cmp-\/>getWeight())\ ==\ cmp-\/>\mbox{\hyperlink{class_edge_a1caaffca117bab3ff5b7387623a356f8}{getWeight}}()\ ?\ cmp\ :\ minEdge;}
+\DoxyCodeLine{\Hypertarget{_algoritmos_8cpp_source_l00104}00104\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_algoritmos_8cpp_source_l00105}00105\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ minEdge;}
+\DoxyCodeLine{\Hypertarget{_algoritmos_8cpp_source_l00106}00106\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{_algoritmos_8cpp_source_l00107}00107\ }
+\DoxyCodeLine{\Hypertarget{_algoritmos_8cpp_source_l00108}00108\ \ \ \ \ \mbox{\hyperlink{class_vertex}{Vertex}}\ *current\ =\ root;}
+\DoxyCodeLine{\Hypertarget{_algoritmos_8cpp_source_l00109}00109\ \ \ \ \ current-\/>\mbox{\hyperlink{class_vertex_a15eeabbbb6d517af746ae137c6d5b595}{setVisited}}(\textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{_algoritmos_8cpp_source_l00110}00110\ }
+\DoxyCodeLine{\Hypertarget{_algoritmos_8cpp_source_l00111}00111\ \ \ \ \ \textcolor{keywordtype}{double}\ distance\ =\ 0.0f;}
+\DoxyCodeLine{\Hypertarget{_algoritmos_8cpp_source_l00112}00112\ \ \ \ \ vector<Edge*>\ path;}
+\DoxyCodeLine{\Hypertarget{_algoritmos_8cpp_source_l00113}00113\ }
+\DoxyCodeLine{\Hypertarget{_algoritmos_8cpp_source_l00114}00114\ \ \ \ \ \textcolor{keywordflow}{while}\ (\textcolor{keyword}{true})\ \{}
+\DoxyCodeLine{\Hypertarget{_algoritmos_8cpp_source_l00115}00115\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_edge}{Edge}}\ *minEdge\ =\ getShortestUnvisitedEdge(current-\/>\mbox{\hyperlink{class_vertex_a9858f2aa388d2bfb49d9df8f4504b5a0}{getAdj}}());}
+\DoxyCodeLine{\Hypertarget{_algoritmos_8cpp_source_l00116}00116\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (minEdge\ ==\ \textcolor{keyword}{nullptr})\ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_algoritmos_8cpp_source_l00117}00117\ }
+\DoxyCodeLine{\Hypertarget{_algoritmos_8cpp_source_l00118}00118\ \ \ \ \ \ \ \ \ distance\ +=\ minEdge-\/>\mbox{\hyperlink{class_edge_a1caaffca117bab3ff5b7387623a356f8}{getWeight}}();}
+\DoxyCodeLine{\Hypertarget{_algoritmos_8cpp_source_l00119}00119\ \ \ \ \ \ \ \ \ path.push\_back(minEdge);}
+\DoxyCodeLine{\Hypertarget{_algoritmos_8cpp_source_l00120}00120\ \ \ \ \ \ \ \ \ current\ =\ minEdge-\/>\mbox{\hyperlink{class_edge_a5cda44e9ba257b03963a1ac301371a59}{getDest}}();}
+\DoxyCodeLine{\Hypertarget{_algoritmos_8cpp_source_l00121}00121\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_algoritmos_8cpp_source_l00122}00122\ }
+\DoxyCodeLine{\Hypertarget{_algoritmos_8cpp_source_l00123}00123\ \ \ \ \ distance\ +=\ \mbox{\hyperlink{_algoritmos_8cpp_a790001ecdc9d8f5a3865e0ccd7612cda}{haversine}}(current,\ root);}
+\DoxyCodeLine{\Hypertarget{_algoritmos_8cpp_source_l00124}00124\ }
+\DoxyCodeLine{\Hypertarget{_algoritmos_8cpp_source_l00125}00125\ \ \ \ \ \textcolor{keywordflow}{return}\ distance;}
+\DoxyCodeLine{\Hypertarget{_algoritmos_8cpp_source_l00126}00126\ \}}
+
+\end{DoxyCode}

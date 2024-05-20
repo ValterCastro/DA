@@ -1,0 +1,32 @@
+\doxysection{UFDS.\+h}
+\hypertarget{_u_f_d_s_8h_source}{}\label{_u_f_d_s_8h_source}\index{data\_structures/UFDS.h@{data\_structures/UFDS.h}}
+\mbox{\hyperlink{_u_f_d_s_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_u_f_d_s_8h_source_l00001}00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{_u_f_d_s_8h_source_l00002}00002\ \textcolor{comment}{\ *\ UFDS.h}}
+\DoxyCodeLine{\Hypertarget{_u_f_d_s_8h_source_l00003}00003\ \textcolor{comment}{\ *\ A\ simple\ implementation\ of\ Union-\/Find\ Disjoint\ Set\ (UFDS),\ required\ by\ Kruskal's\ algorithm.}}
+\DoxyCodeLine{\Hypertarget{_u_f_d_s_8h_source_l00004}00004\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{_u_f_d_s_8h_source_l00005}00005\ \textcolor{comment}{\ *\ Created\ on:\ 25/01/2022}}
+\DoxyCodeLine{\Hypertarget{_u_f_d_s_8h_source_l00006}00006\ \textcolor{comment}{\ *\ \ \ \ \ \ Author:\ Gonçalo\ Leão}}
+\DoxyCodeLine{\Hypertarget{_u_f_d_s_8h_source_l00007}00007\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{_u_f_d_s_8h_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{_u_f_d_s_8h_source_l00009}00009\ \textcolor{preprocessor}{\#ifndef\ DA\_TP\_CLASSES\_UFDS}}
+\DoxyCodeLine{\Hypertarget{_u_f_d_s_8h_source_l00010}00010\ \textcolor{preprocessor}{\#define\ DA\_TP\_CLASSES\_UFDS}}
+\DoxyCodeLine{\Hypertarget{_u_f_d_s_8h_source_l00011}00011\ }
+\DoxyCodeLine{\Hypertarget{_u_f_d_s_8h_source_l00012}00012\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{\Hypertarget{_u_f_d_s_8h_source_l00013}00013\ }
+\DoxyCodeLine{\Hypertarget{_u_f_d_s_8h_source_l00014}\mbox{\hyperlink{class_u_f_d_s}{00014}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_u_f_d_s}{UFDS}}\ \{}
+\DoxyCodeLine{\Hypertarget{_u_f_d_s_8h_source_l00015}00015\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_u_f_d_s_8h_source_l00016}00016\ \ \ \ \ \mbox{\hyperlink{class_u_f_d_s_a9daac3830c0769f08aceb6236f407248}{UFDS}}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ N);}
+\DoxyCodeLine{\Hypertarget{_u_f_d_s_8h_source_l00017}00017\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{long}\ \mbox{\hyperlink{class_u_f_d_s_afe161413e4cd6702b2ca2f475eddeca0}{findSet}}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ i);}
+\DoxyCodeLine{\Hypertarget{_u_f_d_s_8h_source_l00018}00018\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_u_f_d_s_a793b0e0337223456401318c652f0cdd0}{isSameSet}}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ i,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ j);}
+\DoxyCodeLine{\Hypertarget{_u_f_d_s_8h_source_l00019}00019\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_u_f_d_s_a0955e92d417b1bfbba94dc8c660f86d3}{linkSets}}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ i,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ j);}
+\DoxyCodeLine{\Hypertarget{_u_f_d_s_8h_source_l00020}00020\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{_u_f_d_s_8h_source_l00021}\mbox{\hyperlink{class_u_f_d_s_af77dd98a4e13936452f132a49b36e95a}{00021}}\ \ \ \ \ std::vector<unsigned\ int>\ \mbox{\hyperlink{class_u_f_d_s_af77dd98a4e13936452f132a49b36e95a}{path}};\ \textcolor{comment}{//\ Ancestor\ of\ node\ i\ (which\ can\ be\ itself).\ It\ is\ used\ to\ determine\ if\ two\ nodes\ are\ part\ of\ the\ same\ set.}}
+\DoxyCodeLine{\Hypertarget{_u_f_d_s_8h_source_l00022}\mbox{\hyperlink{class_u_f_d_s_afd7eb102f101a1c6f441a8e47aa5a399}{00022}}\ \ \ \ \ std::vector<unsigned\ int>\ \mbox{\hyperlink{class_u_f_d_s_afd7eb102f101a1c6f441a8e47aa5a399}{rank}};\ \textcolor{comment}{//\ Upper\ bound\ for\ the\ height\ of\ a\ tree\ whose\ root\ is\ node\ i.}}
+\DoxyCodeLine{\Hypertarget{_u_f_d_s_8h_source_l00023}00023\ \};}
+\DoxyCodeLine{\Hypertarget{_u_f_d_s_8h_source_l00024}00024\ }
+\DoxyCodeLine{\Hypertarget{_u_f_d_s_8h_source_l00025}00025\ }
+\DoxyCodeLine{\Hypertarget{_u_f_d_s_8h_source_l00026}00026\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//DA\_TP\_CLASSES\_UFDS}}
+
+\end{DoxyCode}

@@ -1,0 +1,90 @@
+\doxysection{Graph.\+h}
+\hypertarget{_graph_8h_source}{}\label{_graph_8h_source}\index{data\_structures/Graph.h@{data\_structures/Graph.h}}
+\mbox{\hyperlink{_graph_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_graph_8h_source_l00001}00001\ \textcolor{comment}{//\ By:\ Gonçalo\ Leão}}
+\DoxyCodeLine{\Hypertarget{_graph_8h_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{_graph_8h_source_l00003}00003\ \textcolor{preprocessor}{\#ifndef\ DA\_TP\_CLASSES\_GRAPH}}
+\DoxyCodeLine{\Hypertarget{_graph_8h_source_l00004}00004\ \textcolor{preprocessor}{\#define\ DA\_TP\_CLASSES\_GRAPH}}
+\DoxyCodeLine{\Hypertarget{_graph_8h_source_l00005}00005\ }
+\DoxyCodeLine{\Hypertarget{_graph_8h_source_l00006}00006\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{\Hypertarget{_graph_8h_source_l00007}00007\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{\Hypertarget{_graph_8h_source_l00008}00008\ \textcolor{preprocessor}{\#include\ <queue>}}
+\DoxyCodeLine{\Hypertarget{_graph_8h_source_l00009}00009\ \textcolor{preprocessor}{\#include\ <limits>}}
+\DoxyCodeLine{\Hypertarget{_graph_8h_source_l00010}00010\ \textcolor{preprocessor}{\#include\ <algorithm>}}
+\DoxyCodeLine{\Hypertarget{_graph_8h_source_l00011}00011\ \textcolor{preprocessor}{\#include\ <unordered\_map>}}
+\DoxyCodeLine{\Hypertarget{_graph_8h_source_l00012}00012\ \textcolor{preprocessor}{\#include\ <stack>}}
+\DoxyCodeLine{\Hypertarget{_graph_8h_source_l00013}00013\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_mutable_priority_queue_8h}{MutablePriorityQueue.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_graph_8h_source_l00014}00014\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{\Hypertarget{_graph_8h_source_l00015}00015\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{\Hypertarget{_graph_8h_source_l00016}00016\ \textcolor{preprocessor}{\#include\ <queue>}}
+\DoxyCodeLine{\Hypertarget{_graph_8h_source_l00017}00017\ \textcolor{preprocessor}{\#include\ <limits>}}
+\DoxyCodeLine{\Hypertarget{_graph_8h_source_l00018}00018\ \textcolor{preprocessor}{\#include\ <algorithm>}}
+\DoxyCodeLine{\Hypertarget{_graph_8h_source_l00019}00019\ \textcolor{preprocessor}{\#include\ <set>}}
+\DoxyCodeLine{\Hypertarget{_graph_8h_source_l00020}00020\ \textcolor{preprocessor}{\#include\ <cmath>}}
+\DoxyCodeLine{\Hypertarget{_graph_8h_source_l00021}00021\ }
+\DoxyCodeLine{\Hypertarget{_graph_8h_source_l00022}00022\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_vertex_edge_8h}{VertexEdge.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_graph_8h_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{_graph_8h_source_l00024}\mbox{\hyperlink{class_graph}{00024}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_graph}{Graph}}\ \{}
+\DoxyCodeLine{\Hypertarget{_graph_8h_source_l00025}00025\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_graph_8h_source_l00026}00026\ \ \ \ \ \mbox{\hyperlink{class_graph_ae4c72b8ac4d693c49800a4c7e273654f}{Graph}}();}
+\DoxyCodeLine{\Hypertarget{_graph_8h_source_l00027}00027\ \ \ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{_graph_8h_source_l00028}00028\ \textcolor{comment}{\ \ \ \ *\ Auxiliary\ function\ to\ find\ a\ vertex\ with\ a\ given\ ID.}}
+\DoxyCodeLine{\Hypertarget{_graph_8h_source_l00029}00029\ \textcolor{comment}{\ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{_graph_8h_source_l00030}00030\ \ \ \ \ \mbox{\hyperlink{class_vertex}{Vertex}}\ *\mbox{\hyperlink{class_graph_a05c45e4efdf867792139ddf3628c0b60}{findVertex}}(\textcolor{keywordtype}{int}\ \textcolor{keywordtype}{id})\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{_graph_8h_source_l00031}00031\ \ \ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{_graph_8h_source_l00032}00032\ \textcolor{comment}{\ \ \ \ \ *\ \ Adds\ a\ vertex\ with\ a\ given\ content\ or\ info\ (in)\ to\ a\ graph\ (this).}}
+\DoxyCodeLine{\Hypertarget{_graph_8h_source_l00033}00033\ \textcolor{comment}{\ \ \ \ \ *\ \ Returns\ true\ if\ successful,\ and\ false\ if\ a\ vertex\ with\ that\ content\ already\ exists.}}
+\DoxyCodeLine{\Hypertarget{_graph_8h_source_l00034}00034\ \textcolor{comment}{\ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{_graph_8h_source_l00035}00035\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_graph_a2d2f69946b29fee07c53cb6552c7690e}{addVertex}}(\textcolor{keywordtype}{int}\ \textcolor{keywordtype}{id});}
+\DoxyCodeLine{\Hypertarget{_graph_8h_source_l00036}00036\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_graph_a2d2f69946b29fee07c53cb6552c7690e}{addVertex}}(\textcolor{keywordtype}{int}\ \textcolor{keywordtype}{id},\ \textcolor{keywordtype}{double}\ longitude,\ \textcolor{keywordtype}{double}\ latitude);}
+\DoxyCodeLine{\Hypertarget{_graph_8h_source_l00037}00037\ }
+\DoxyCodeLine{\Hypertarget{_graph_8h_source_l00038}00038\ \ \ \ \ \textcolor{comment}{//void\ tsp\_backtrack(vector<int>\ \&path,\ vector<bool>\&\ visited,\ double\ \&min\_cost,\ double\ costSoFar);}}
+\DoxyCodeLine{\Hypertarget{_graph_8h_source_l00039}00039\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_graph_a74ac3915ab78762e537d45657e30429b}{triangularApproximation}}();}
+\DoxyCodeLine{\Hypertarget{_graph_8h_source_l00040}00040\ \ \ \ \ vector<Edge*>\ \mbox{\hyperlink{class_graph_aaaf65f343e3c67b1b783f82375884a8f}{prim}}();}
+\DoxyCodeLine{\Hypertarget{_graph_8h_source_l00041}00041\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_graph_a69281f435a52c341937ffddca5555f32}{minWeight}}(vector<double>\ \&weights,vector<bool>\ \&inMST);}
+\DoxyCodeLine{\Hypertarget{_graph_8h_source_l00042}00042\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_graph_ae425a227650e2270bd2f0f57281786bc}{dfs}}(\textcolor{keyword}{const}\ vector<Edge*>\ \&mst,\ \mbox{\hyperlink{class_vertex}{Vertex}}*\ v,\ vector<bool>\ \&visited,\ vector<int>\ \&path);}
+\DoxyCodeLine{\Hypertarget{_graph_8h_source_l00043}00043\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_graph_a8b0db3dbf1368e972e7c551f6084db62}{haversine}}(\textcolor{keywordtype}{double}\ lat1,\ \textcolor{keywordtype}{double}\ lon1,\ \textcolor{keywordtype}{double}\ lat2,\ \textcolor{keywordtype}{double}\ lon2);}
+\DoxyCodeLine{\Hypertarget{_graph_8h_source_l00044}00044\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_graph_a8680f19d7040f83a874d04dae72e6285}{haveEdge}}(\textcolor{keywordtype}{int}\ v1,\ \textcolor{keywordtype}{int}\ v2);}
+\DoxyCodeLine{\Hypertarget{_graph_8h_source_l00045}00045\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_graph_a4653f95b8dbec22cbf1b0e24e3e7dd16}{totalDistance}}(\textcolor{keyword}{const}\ vector<int>\ \&path);}
+\DoxyCodeLine{\Hypertarget{_graph_8h_source_l00046}00046\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_graph_a78b8f75055384d32f66433e26bd5a1fb}{nearestNeighbor}}(\mbox{\hyperlink{class_vertex}{Vertex}}*\ \&initial,\mbox{\hyperlink{class_vertex}{Vertex}}*\ \&current,\ vector<Edge*>\&\ path,\ \textcolor{keywordtype}{int}\ graphSize,\ \textcolor{keywordtype}{double}\ \&distance,\ \textcolor{keywordtype}{bool}\ all);}
+\DoxyCodeLine{\Hypertarget{_graph_8h_source_l00047}00047\ \ \ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{_graph_8h_source_l00048}00048\ \textcolor{comment}{\ \ \ \ \ *\ Adds\ an\ edge\ to\ a\ graph\ (this),\ given\ the\ contents\ of\ the\ source\ and}}
+\DoxyCodeLine{\Hypertarget{_graph_8h_source_l00049}00049\ \textcolor{comment}{\ \ \ \ \ *\ destination\ vertices\ and\ the\ edge\ weight\ (w).}}
+\DoxyCodeLine{\Hypertarget{_graph_8h_source_l00050}00050\ \textcolor{comment}{\ \ \ \ \ *\ Returns\ true\ if\ successful,\ and\ false\ if\ the\ source\ or\ destination\ vertex\ does\ not\ exist.}}
+\DoxyCodeLine{\Hypertarget{_graph_8h_source_l00051}00051\ \textcolor{comment}{\ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{_graph_8h_source_l00052}00052\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_graph_a9bfae99b65a95d5d51696cdda1cab1bb}{addEdge}}(\textcolor{keywordtype}{int}\ sourc,\textcolor{keywordtype}{int}\ dest,\textcolor{keywordtype}{double}\ w);}
+\DoxyCodeLine{\Hypertarget{_graph_8h_source_l00053}00053\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_graph_a40b0ee96fce900475b8971d7ba41bf80}{addBidirectionalEdge}}(\textcolor{keywordtype}{int}\ sourc,\textcolor{keywordtype}{int}\ dest,\textcolor{keywordtype}{double}\ w);}
+\DoxyCodeLine{\Hypertarget{_graph_8h_source_l00054}00054\ }
+\DoxyCodeLine{\Hypertarget{_graph_8h_source_l00055}00055\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_graph_af4ebf994612209ea38b477f08ad47cbe}{getNumVertex}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{_graph_8h_source_l00056}00056\ \ \ \ \ std::unordered\_map<int,\ Vertex*>\ \mbox{\hyperlink{class_graph_a6c561481b4dbc9c089eb349fc0c0fb95}{getVertexMap}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{_graph_8h_source_l00057}00057\ }
+\DoxyCodeLine{\Hypertarget{_graph_8h_source_l00058}00058\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_graph_a140e570786384d66d516eeafb46dab74}{tsp\_backtrack}}(std::vector<int>\ \&path,\ std::vector<bool>\&\ visited,\ \textcolor{keywordtype}{double}\ \&min\_cost,\ \textcolor{keywordtype}{double}\ costSoFar);}
+\DoxyCodeLine{\Hypertarget{_graph_8h_source_l00059}00059\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_graph_a5960e699fd10a2fffa473a5f43473df9}{calculate\_tsp}}(\textcolor{keywordtype}{int}\ node,\ \textcolor{keywordtype}{int}\ edge,\ std::vector<std::vector<double>>\&\ dists);}
+\DoxyCodeLine{\Hypertarget{_graph_8h_source_l00060}00060\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_graph_ad809364a84448a9fa0c7340fceeb217d}{tspNonFullyConnected}}(\textcolor{keywordtype}{int}\ startNode);}
+\DoxyCodeLine{\Hypertarget{_graph_8h_source_l00061}00061\ }
+\DoxyCodeLine{\Hypertarget{_graph_8h_source_l00062}00062\ }
+\DoxyCodeLine{\Hypertarget{_graph_8h_source_l00063}00063\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{\Hypertarget{_graph_8h_source_l00064}\mbox{\hyperlink{class_graph_a7abf58446a9d0e8bac8d510d0d68d02f}{00064}}\ \ \ \ \ set<Vertex*>\ \mbox{\hyperlink{class_graph_a7abf58446a9d0e8bac8d510d0d68d02f}{vertexSet}};}
+\DoxyCodeLine{\Hypertarget{_graph_8h_source_l00065}\mbox{\hyperlink{class_graph_a75ec8868ac2bcbbe23eef25b6786ba37}{00065}}\ \ \ \ \ unordered\_map<int,Vertex*>\ \mbox{\hyperlink{class_graph_a75ec8868ac2bcbbe23eef25b6786ba37}{vertexMap}};}
+\DoxyCodeLine{\Hypertarget{_graph_8h_source_l00066}\mbox{\hyperlink{class_graph_a9e61864da69191c1896a25a708d1a02d}{00066}}\ \ \ \ \ \textcolor{keywordtype}{double}\ **\ \mbox{\hyperlink{class_graph_a9e61864da69191c1896a25a708d1a02d}{distMatrix}}\ =\ \textcolor{keyword}{nullptr};\ \ \ \textcolor{comment}{//\ dist\ matrix\ for\ Floyd-\/Warshall}}
+\DoxyCodeLine{\Hypertarget{_graph_8h_source_l00067}\mbox{\hyperlink{class_graph_a3ae09699c3616af3ebfcb1eb045f2b62}{00067}}\ \ \ \ \ \textcolor{keywordtype}{int}\ **\mbox{\hyperlink{class_graph_a3ae09699c3616af3ebfcb1eb045f2b62}{pathMatrix}}\ =\ \textcolor{keyword}{nullptr};\ \ \ \textcolor{comment}{//\ path\ matrix\ for\ Floyd-\/Warshall}}
+\DoxyCodeLine{\Hypertarget{_graph_8h_source_l00068}00068\ }
+\DoxyCodeLine{\Hypertarget{_graph_8h_source_l00069}00069\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_graph_aa4c4a4f14dd351b27bbf1db5dd17d194}{findOrCalculateDistance}}(\textcolor{keywordtype}{int}\ origem,\ \textcolor{keywordtype}{int}\ destino);}
+\DoxyCodeLine{\Hypertarget{_graph_8h_source_l00070}00070\ }
+\DoxyCodeLine{\Hypertarget{_graph_8h_source_l00071}00071\ \ \ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{_graph_8h_source_l00072}00072\ \textcolor{comment}{\ \ \ \ \ *\ Finds\ the\ index\ of\ the\ vertex\ with\ a\ given\ content.}}
+\DoxyCodeLine{\Hypertarget{_graph_8h_source_l00073}00073\ \textcolor{comment}{\ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{_graph_8h_source_l00074}00074\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_graph_a7dfcef08a9286cf144902cd7e56940ee}{findVertexIdx}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ \&\textcolor{keywordtype}{id})\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{_graph_8h_source_l00075}00075\ \};}
+\DoxyCodeLine{\Hypertarget{_graph_8h_source_l00076}00076\ }
+\DoxyCodeLine{\Hypertarget{_graph_8h_source_l00077}\mbox{\hyperlink{classweight_compare}{00077}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classweight_compare}{weightCompare}}\{}
+\DoxyCodeLine{\Hypertarget{_graph_8h_source_l00078}00078\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_graph_8h_source_l00079}\mbox{\hyperlink{classweight_compare_af9c7aa01ad22b650cad040506752c3fa}{00079}}\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classweight_compare_af9c7aa01ad22b650cad040506752c3fa}{operator()}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_edge}{Edge}}*\ e1,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_edge}{Edge}}*\ e2)\textcolor{keyword}{\ const}\{}
+\DoxyCodeLine{\Hypertarget{_graph_8h_source_l00080}00080\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ e1-\/>\mbox{\hyperlink{class_edge_a1caaffca117bab3ff5b7387623a356f8}{getWeight}}()\ >\ e2-\/>\mbox{\hyperlink{class_edge_a1caaffca117bab3ff5b7387623a356f8}{getWeight}}();}
+\DoxyCodeLine{\Hypertarget{_graph_8h_source_l00081}00081\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_graph_8h_source_l00082}00082\ \};}
+\DoxyCodeLine{\Hypertarget{_graph_8h_source_l00083}00083\ }
+\DoxyCodeLine{\Hypertarget{_graph_8h_source_l00084}00084\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ DA\_TP\_CLASSES\_GRAPH\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

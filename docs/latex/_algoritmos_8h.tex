@@ -1,0 +1,159 @@
+\doxysection{src/\+Algoritmos.h File Reference}
+\hypertarget{_algoritmos_8h}{}\label{_algoritmos_8h}\index{src/Algoritmos.h@{src/Algoritmos.h}}
+{\ttfamily \#include "{}Graph.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+vector$<$ \mbox{\hyperlink{class_edge}{Edge}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{_algoritmos_8h_aceb5640b662acd25284e80ae1a9dc0a0}{prim}} (\mbox{\hyperlink{class_graph}{Graph}} \&graph, int root)
+\begin{DoxyCompactList}\small\item\em Function that runs Prim algorithm. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{_algoritmos_8h_a790001ecdc9d8f5a3865e0ccd7612cda}{haversine}} (\mbox{\hyperlink{class_vertex}{Vertex}} \texorpdfstring{$\ast$}{*}v1, \mbox{\hyperlink{class_vertex}{Vertex}} \texorpdfstring{$\ast$}{*}v2)
+\begin{DoxyCompactList}\small\item\em Function that calculates haversine distance between two nodes. \end{DoxyCompactList}\item 
+vector$<$ \mbox{\hyperlink{class_vertex}{Vertex}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{_algoritmos_8h_af0a087495d508116af0d07be09dea82c}{dfs\+On\+Mst}} (const vector$<$ \mbox{\hyperlink{class_edge}{Edge}} \texorpdfstring{$\ast$}{*} $>$ \&mst, \mbox{\hyperlink{class_vertex}{Vertex}} \texorpdfstring{$\ast$}{*}root)
+\begin{DoxyCompactList}\small\item\em Function that calculates minimum spanning tree. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{_algoritmos_8h_ae4f503042ac661e5cf8e1a6be13ae2f8}{total\+Distance}} (const vector$<$ \mbox{\hyperlink{class_vertex}{Vertex}} \texorpdfstring{$\ast$}{*} $>$ \&path)
+\begin{DoxyCompactList}\small\item\em Function that calculates total distance of a path in a graph. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{_algoritmos_8h_a8238fb20dac4f63003fd0a53b813ff0c}{triangular\+Approximation}} (\mbox{\hyperlink{class_graph}{Graph}} \&graph)
+\begin{DoxyCompactList}\small\item\em Function that approximates the TSP algorithm with a MST. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{_algoritmos_8h_a2140c0919a8426e2179469deb861d154}{nearest\+Neighbor}} (\mbox{\hyperlink{class_vertex}{Vertex}} \texorpdfstring{$\ast$}{*}root)
+\begin{DoxyCompactList}\small\item\em Function that calculates the nearest neighbor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{_algoritmos_8h_af0a087495d508116af0d07be09dea82c}\label{_algoritmos_8h_af0a087495d508116af0d07be09dea82c} 
+\index{Algoritmos.h@{Algoritmos.h}!dfsOnMst@{dfsOnMst}}
+\index{dfsOnMst@{dfsOnMst}!Algoritmos.h@{Algoritmos.h}}
+\doxysubsubsection{\texorpdfstring{dfsOnMst()}{dfsOnMst()}}
+{\footnotesize\ttfamily vector$<$ \mbox{\hyperlink{class_vertex}{Vertex}} \texorpdfstring{$\ast$}{*} $>$ dfs\+On\+Mst (\begin{DoxyParamCaption}\item[{const vector$<$ \mbox{\hyperlink{class_edge}{Edge}} \texorpdfstring{$\ast$}{*} $>$ \&}]{mst,  }\item[{\mbox{\hyperlink{class_vertex}{Vertex}} \texorpdfstring{$\ast$}{*}}]{root }\end{DoxyParamCaption})}
+
+
+
+Function that calculates minimum spanning tree. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em mst} & mst edges. \\
+\hline
+{\em root} & source node. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+mst vertices. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_algoritmos_8cpp_source_l00056}{56}} of file \mbox{\hyperlink{_algoritmos_8cpp_source}{Algoritmos.\+cpp}}.
+
+\Hypertarget{_algoritmos_8h_a790001ecdc9d8f5a3865e0ccd7612cda}\label{_algoritmos_8h_a790001ecdc9d8f5a3865e0ccd7612cda} 
+\index{Algoritmos.h@{Algoritmos.h}!haversine@{haversine}}
+\index{haversine@{haversine}!Algoritmos.h@{Algoritmos.h}}
+\doxysubsubsection{\texorpdfstring{haversine()}{haversine()}}
+{\footnotesize\ttfamily double haversine (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_vertex}{Vertex}} \texorpdfstring{$\ast$}{*}}]{v1,  }\item[{\mbox{\hyperlink{class_vertex}{Vertex}} \texorpdfstring{$\ast$}{*}}]{v2 }\end{DoxyParamCaption})}
+
+
+
+Function that calculates haversine distance between two nodes. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em v1} & vertex one. \\
+\hline
+{\em v2} & vertex two. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+haversine distance. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_algoritmos_8cpp_source_l00031}{31}} of file \mbox{\hyperlink{_algoritmos_8cpp_source}{Algoritmos.\+cpp}}.
+
+\Hypertarget{_algoritmos_8h_a2140c0919a8426e2179469deb861d154}\label{_algoritmos_8h_a2140c0919a8426e2179469deb861d154} 
+\index{Algoritmos.h@{Algoritmos.h}!nearestNeighbor@{nearestNeighbor}}
+\index{nearestNeighbor@{nearestNeighbor}!Algoritmos.h@{Algoritmos.h}}
+\doxysubsubsection{\texorpdfstring{nearestNeighbor()}{nearestNeighbor()}}
+{\footnotesize\ttfamily double nearest\+Neighbor (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_vertex}{Vertex}} \texorpdfstring{$\ast$}{*}}]{root }\end{DoxyParamCaption})}
+
+
+
+Function that calculates the nearest neighbor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em root} & is the vertex. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+nearest neighbor dist. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_algoritmos_8cpp_source_l00097}{97}} of file \mbox{\hyperlink{_algoritmos_8cpp_source}{Algoritmos.\+cpp}}.
+
+\Hypertarget{_algoritmos_8h_aceb5640b662acd25284e80ae1a9dc0a0}\label{_algoritmos_8h_aceb5640b662acd25284e80ae1a9dc0a0} 
+\index{Algoritmos.h@{Algoritmos.h}!prim@{prim}}
+\index{prim@{prim}!Algoritmos.h@{Algoritmos.h}}
+\doxysubsubsection{\texorpdfstring{prim()}{prim()}}
+{\footnotesize\ttfamily vector$<$ \mbox{\hyperlink{class_edge}{Edge}} \texorpdfstring{$\ast$}{*} $>$ prim (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_graph}{Graph}} \&}]{graph,  }\item[{int}]{root }\end{DoxyParamCaption})}
+
+
+
+Function that runs Prim algorithm. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em graph} & is the inoput graph. \\
+\hline
+{\em root} & root node id. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+resulting edges. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_algoritmos_8cpp_source_l00004}{4}} of file \mbox{\hyperlink{_algoritmos_8cpp_source}{Algoritmos.\+cpp}}.
+
+\Hypertarget{_algoritmos_8h_ae4f503042ac661e5cf8e1a6be13ae2f8}\label{_algoritmos_8h_ae4f503042ac661e5cf8e1a6be13ae2f8} 
+\index{Algoritmos.h@{Algoritmos.h}!totalDistance@{totalDistance}}
+\index{totalDistance@{totalDistance}!Algoritmos.h@{Algoritmos.h}}
+\doxysubsubsection{\texorpdfstring{totalDistance()}{totalDistance()}}
+{\footnotesize\ttfamily double total\+Distance (\begin{DoxyParamCaption}\item[{const vector$<$ \mbox{\hyperlink{class_vertex}{Vertex}} \texorpdfstring{$\ast$}{*} $>$ \&}]{path }\end{DoxyParamCaption})}
+
+
+
+Function that calculates total distance of a path in a graph. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & is the graph path. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+total distance. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_algoritmos_8cpp_source_l00070}{70}} of file \mbox{\hyperlink{_algoritmos_8cpp_source}{Algoritmos.\+cpp}}.
+
+\Hypertarget{_algoritmos_8h_a8238fb20dac4f63003fd0a53b813ff0c}\label{_algoritmos_8h_a8238fb20dac4f63003fd0a53b813ff0c} 
+\index{Algoritmos.h@{Algoritmos.h}!triangularApproximation@{triangularApproximation}}
+\index{triangularApproximation@{triangularApproximation}!Algoritmos.h@{Algoritmos.h}}
+\doxysubsubsection{\texorpdfstring{triangularApproximation()}{triangularApproximation()}}
+{\footnotesize\ttfamily double triangular\+Approximation (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_graph}{Graph}} \&}]{graph }\end{DoxyParamCaption})}
+
+
+
+Function that approximates the TSP algorithm with a MST. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em graph} & is the graph. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+solution. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_algoritmos_8cpp_source_l00092}{92}} of file \mbox{\hyperlink{_algoritmos_8cpp_source}{Algoritmos.\+cpp}}.
+

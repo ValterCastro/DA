@@ -1,0 +1,203 @@
+\doxysection{Menu Class Reference}
+\hypertarget{class_menu}{}\label{class_menu}\index{Menu@{Menu}}
+
+
+\doxylink{class_menu}{Menu} for user interface.  
+
+
+
+
+{\ttfamily \#include $<$Menu.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_menu_ad466dd83355124a6ed958430450bfe94}{Menu}} ()
+\begin{DoxyCompactList}\small\item\em Constructor for Menu💀. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_menu_ac0b39bfc979cab36d8d5d57094e5fcee}{Read\+Menu}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_graph}{Graph}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_menu_ae366980321f279570ef7f2f14f2daf75}{backtrack}} = new \mbox{\hyperlink{class_graph}{Graph}}()
+\item 
+\mbox{\hyperlink{class_graph}{Graph}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_menu_a3f71c7617cf7df4820aee1735ea1da64}{triangular\+\_\+heuristic}} = new \mbox{\hyperlink{class_graph}{Graph}}()
+\item 
+\mbox{\hyperlink{class_graph}{Graph}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_menu_a08ae5657c6178c82d3c454ab8122df10}{extra}} = new \mbox{\hyperlink{class_graph}{Graph}}()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{class_menu_a53bfaa2256eeddaeaef614a249d45e96}{Read\+Graph}} (std\+::string graph, std\+::string type)
+\begin{DoxyCompactList}\small\item\em Function that reads graphs. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_menu_aee666edfc35d2ca785a83b2c7f00db43}{Read\+Toy\+Graph\+Menu}} ()
+\begin{DoxyCompactList}\small\item\em Function to display toy graphs interface. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_menu_ae132f74621b8ae01dddb38033ace4e19}{Read\+Real\+World\+Graph\+Menu}} ()
+\begin{DoxyCompactList}\small\item\em Function to display real world graphs interface. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_menu_a1080a682d41e4627a219040bf8782435}{Read\+Extra\+Graph\+Menu}} ()
+\begin{DoxyCompactList}\small\item\em Function to display extra graphs interface. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_menu_a3d3e02e0d2fa53cfcf3ce577b7375cc7}{Algorithm\+Menu}} (int option)
+\begin{DoxyCompactList}\small\item\em Function to display algorithms interface. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\doxylink{class_menu}{Menu} for user interface. 
+
+In this \doxylink{class_menu}{Menu} graphs will be red and algorithm will run and display their results. 
+
+Definition at line \mbox{\hyperlink{_menu_8h_source_l00016}{16}} of file \mbox{\hyperlink{_menu_8h_source}{Menu.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_menu_ad466dd83355124a6ed958430450bfe94}\label{class_menu_ad466dd83355124a6ed958430450bfe94} 
+\index{Menu@{Menu}!Menu@{Menu}}
+\index{Menu@{Menu}!Menu@{Menu}}
+\doxysubsubsection{\texorpdfstring{Menu()}{Menu()}}
+{\footnotesize\ttfamily Menu\+::\+Menu (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Constructor for Menu💀. 
+
+
+
+Definition at line \mbox{\hyperlink{_menu_8cpp_source_l00014}{14}} of file \mbox{\hyperlink{_menu_8cpp_source}{Menu.\+cpp}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_menu_a3d3e02e0d2fa53cfcf3ce577b7375cc7}\label{class_menu_a3d3e02e0d2fa53cfcf3ce577b7375cc7} 
+\index{Menu@{Menu}!AlgorithmMenu@{AlgorithmMenu}}
+\index{AlgorithmMenu@{AlgorithmMenu}!Menu@{Menu}}
+\doxysubsubsection{\texorpdfstring{AlgorithmMenu()}{AlgorithmMenu()}}
+{\footnotesize\ttfamily void Menu\+::\+Algorithm\+Menu (\begin{DoxyParamCaption}\item[{int}]{option }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Function to display algorithms interface. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em option} & To choose which algorithm. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_menu_8cpp_source_l00091}{91}} of file \mbox{\hyperlink{_menu_8cpp_source}{Menu.\+cpp}}.
+
+\Hypertarget{class_menu_a1080a682d41e4627a219040bf8782435}\label{class_menu_a1080a682d41e4627a219040bf8782435} 
+\index{Menu@{Menu}!ReadExtraGraphMenu@{ReadExtraGraphMenu}}
+\index{ReadExtraGraphMenu@{ReadExtraGraphMenu}!Menu@{Menu}}
+\doxysubsubsection{\texorpdfstring{ReadExtraGraphMenu()}{ReadExtraGraphMenu()}}
+{\footnotesize\ttfamily void Menu\+::\+Read\+Extra\+Graph\+Menu (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Function to display extra graphs interface. 
+
+
+
+Definition at line \mbox{\hyperlink{_menu_8cpp_source_l00059}{59}} of file \mbox{\hyperlink{_menu_8cpp_source}{Menu.\+cpp}}.
+
+\Hypertarget{class_menu_a53bfaa2256eeddaeaef614a249d45e96}\label{class_menu_a53bfaa2256eeddaeaef614a249d45e96} 
+\index{Menu@{Menu}!ReadGraph@{ReadGraph}}
+\index{ReadGraph@{ReadGraph}!Menu@{Menu}}
+\doxysubsubsection{\texorpdfstring{ReadGraph()}{ReadGraph()}}
+{\footnotesize\ttfamily int Menu\+::\+Read\+Graph (\begin{DoxyParamCaption}\item[{std\+::string}]{graph,  }\item[{std\+::string}]{type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Function that reads graphs. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em graph} & is the graph path. \\
+\hline
+{\em type} & can be Toy Real-\/(nodes\texorpdfstring{$\vert$}{|}edges) or Extra. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 for success otherwise some error occurred. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_menu_8cpp_source_l00131}{131}} of file \mbox{\hyperlink{_menu_8cpp_source}{Menu.\+cpp}}.
+
+\Hypertarget{class_menu_ac0b39bfc979cab36d8d5d57094e5fcee}\label{class_menu_ac0b39bfc979cab36d8d5d57094e5fcee} 
+\index{Menu@{Menu}!ReadMenu@{ReadMenu}}
+\index{ReadMenu@{ReadMenu}!Menu@{Menu}}
+\doxysubsubsection{\texorpdfstring{ReadMenu()}{ReadMenu()}}
+{\footnotesize\ttfamily int Menu\+::\+Read\+Menu (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_menu_8cpp_source_l00018}{18}} of file \mbox{\hyperlink{_menu_8cpp_source}{Menu.\+cpp}}.
+
+\Hypertarget{class_menu_ae132f74621b8ae01dddb38033ace4e19}\label{class_menu_ae132f74621b8ae01dddb38033ace4e19} 
+\index{Menu@{Menu}!ReadRealWorldGraphMenu@{ReadRealWorldGraphMenu}}
+\index{ReadRealWorldGraphMenu@{ReadRealWorldGraphMenu}!Menu@{Menu}}
+\doxysubsubsection{\texorpdfstring{ReadRealWorldGraphMenu()}{ReadRealWorldGraphMenu()}}
+{\footnotesize\ttfamily void Menu\+::\+Read\+Real\+World\+Graph\+Menu (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Function to display real world graphs interface. 
+
+
+
+Definition at line \mbox{\hyperlink{_menu_8cpp_source_l00260}{260}} of file \mbox{\hyperlink{_menu_8cpp_source}{Menu.\+cpp}}.
+
+\Hypertarget{class_menu_aee666edfc35d2ca785a83b2c7f00db43}\label{class_menu_aee666edfc35d2ca785a83b2c7f00db43} 
+\index{Menu@{Menu}!ReadToyGraphMenu@{ReadToyGraphMenu}}
+\index{ReadToyGraphMenu@{ReadToyGraphMenu}!Menu@{Menu}}
+\doxysubsubsection{\texorpdfstring{ReadToyGraphMenu()}{ReadToyGraphMenu()}}
+{\footnotesize\ttfamily void Menu\+::\+Read\+Toy\+Graph\+Menu (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Function to display toy graphs interface. 
+
+
+
+Definition at line \mbox{\hyperlink{_menu_8cpp_source_l00306}{306}} of file \mbox{\hyperlink{_menu_8cpp_source}{Menu.\+cpp}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_menu_ae366980321f279570ef7f2f14f2daf75}\label{class_menu_ae366980321f279570ef7f2f14f2daf75} 
+\index{Menu@{Menu}!backtrack@{backtrack}}
+\index{backtrack@{backtrack}!Menu@{Menu}}
+\doxysubsubsection{\texorpdfstring{backtrack}{backtrack}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_graph}{Graph}}\texorpdfstring{$\ast$}{*} Menu\+::backtrack = new \mbox{\hyperlink{class_graph}{Graph}}()}
+
+
+
+Definition at line \mbox{\hyperlink{_menu_8h_source_l00045}{45}} of file \mbox{\hyperlink{_menu_8h_source}{Menu.\+h}}.
+
+\Hypertarget{class_menu_a08ae5657c6178c82d3c454ab8122df10}\label{class_menu_a08ae5657c6178c82d3c454ab8122df10} 
+\index{Menu@{Menu}!extra@{extra}}
+\index{extra@{extra}!Menu@{Menu}}
+\doxysubsubsection{\texorpdfstring{extra}{extra}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_graph}{Graph}}\texorpdfstring{$\ast$}{*} Menu\+::extra = new \mbox{\hyperlink{class_graph}{Graph}}()}
+
+
+
+Definition at line \mbox{\hyperlink{_menu_8h_source_l00047}{47}} of file \mbox{\hyperlink{_menu_8h_source}{Menu.\+h}}.
+
+\Hypertarget{class_menu_a3f71c7617cf7df4820aee1735ea1da64}\label{class_menu_a3f71c7617cf7df4820aee1735ea1da64} 
+\index{Menu@{Menu}!triangular\_heuristic@{triangular\_heuristic}}
+\index{triangular\_heuristic@{triangular\_heuristic}!Menu@{Menu}}
+\doxysubsubsection{\texorpdfstring{triangular\_heuristic}{triangular\_heuristic}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_graph}{Graph}}\texorpdfstring{$\ast$}{*} Menu\+::triangular\+\_\+heuristic = new \mbox{\hyperlink{class_graph}{Graph}}()}
+
+
+
+Definition at line \mbox{\hyperlink{_menu_8h_source_l00046}{46}} of file \mbox{\hyperlink{_menu_8h_source}{Menu.\+h}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\mbox{\hyperlink{_menu_8h}{Menu.\+h}}\item 
+src/\mbox{\hyperlink{_menu_8cpp}{Menu.\+cpp}}\end{DoxyCompactItemize}

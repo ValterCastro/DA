@@ -1,0 +1,76 @@
+\doxysection{Heap.\+cpp}
+\hypertarget{_heap_8cpp_source}{}\label{_heap_8cpp_source}\index{data\_structures/Heap.cpp@{data\_structures/Heap.cpp}}
+\mbox{\hyperlink{_heap_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_heap_8cpp_source_l00001}00001\ \textcolor{comment}{//\ By:\ Gonçalo\ Leão}}
+\DoxyCodeLine{\Hypertarget{_heap_8cpp_source_l00002}00002\ \textcolor{comment}{//\ Based\ on\ MutablePriorityQueue.h}}
+\DoxyCodeLine{\Hypertarget{_heap_8cpp_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{_heap_8cpp_source_l00004}00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_heap_8h}{Heap.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_heap_8cpp_source_l00005}00005\ }
+\DoxyCodeLine{\Hypertarget{_heap_8cpp_source_l00006}00006\ \textcolor{comment}{//\ Index\ calculations}}
+\DoxyCodeLine{\Hypertarget{_heap_8cpp_source_l00007}\mbox{\hyperlink{_heap_8cpp_a915a9564b15f2c25e828da2e9a05769c}{00007}}\ \textcolor{preprocessor}{\#define\ parent(i)\ ((i)\ /\ 2)}}
+\DoxyCodeLine{\Hypertarget{_heap_8cpp_source_l00008}\mbox{\hyperlink{_heap_8cpp_ac84ef3998ba958fd8abf03d08cc5ffcb}{00008}}\ \textcolor{preprocessor}{\#define\ leftChild(i)\ ((i)\ *\ 2)}}
+\DoxyCodeLine{\Hypertarget{_heap_8cpp_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{_heap_8cpp_source_l00010}\mbox{\hyperlink{class_heap_a6595efd3562a6334d2f5471c2b3b7cb4}{00010}}\ \mbox{\hyperlink{class_heap_a6595efd3562a6334d2f5471c2b3b7cb4}{Heap::Heap}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_heap_8cpp_source_l00011}00011\ \ \ \ \ \mbox{\hyperlink{class_heap_a87f0e00ea91195bbf83b6784e90affbd}{elems}}.push\_back(0);}
+\DoxyCodeLine{\Hypertarget{_heap_8cpp_source_l00012}00012\ \ \ \ \ \textcolor{comment}{//\ indices\ will\ be\ used\ starting\ in\ 1}}
+\DoxyCodeLine{\Hypertarget{_heap_8cpp_source_l00013}00013\ \ \ \ \ \textcolor{comment}{//\ to\ facilitate\ parent/child\ calculations}}
+\DoxyCodeLine{\Hypertarget{_heap_8cpp_source_l00014}00014\ \}}
+\DoxyCodeLine{\Hypertarget{_heap_8cpp_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{_heap_8cpp_source_l00016}\mbox{\hyperlink{class_heap_aad54cb57cd3f33a1493aef602d787463}{00016}}\ \mbox{\hyperlink{class_heap_a6595efd3562a6334d2f5471c2b3b7cb4}{Heap::Heap}}(std::vector<int>\ v):\ \mbox{\hyperlink{class_heap}{Heap}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_heap_8cpp_source_l00017}00017\ \ \ \ \ \textcolor{comment}{//\ Add\ the\ elements\ to\ the\ vector\ without\ respecting\ the\ heap\ property}}
+\DoxyCodeLine{\Hypertarget{_heap_8cpp_source_l00018}00018\ \ \ \ \ \mbox{\hyperlink{class_heap_a87f0e00ea91195bbf83b6784e90affbd}{elems}}.\mbox{\hyperlink{class_heap_a4c6a62f67cebbe16be684d464b2e19f0}{insert}}(\mbox{\hyperlink{class_heap_a87f0e00ea91195bbf83b6784e90affbd}{elems}}.end(),v.begin(),v.end());}
+\DoxyCodeLine{\Hypertarget{_heap_8cpp_source_l00019}00019\ }
+\DoxyCodeLine{\Hypertarget{_heap_8cpp_source_l00020}00020\ \ \ \ \ \textcolor{comment}{//\ Index\ of\ the\ last\ non-\/leaf\ node\ of\ vector\ v}}
+\DoxyCodeLine{\Hypertarget{_heap_8cpp_source_l00021}00021\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ startIdx\ =\ v.size()\ /\ 2;}
+\DoxyCodeLine{\Hypertarget{_heap_8cpp_source_l00022}00022\ }
+\DoxyCodeLine{\Hypertarget{_heap_8cpp_source_l00023}00023\ \ \ \ \ \textcolor{comment}{//\ Move\ the\ elements\ around\ so\ that\ the\ heap\ property\ is\ respected}}
+\DoxyCodeLine{\Hypertarget{_heap_8cpp_source_l00024}00024\ \ \ \ \ \textcolor{comment}{//\ There\ is\ no\ need\ to\ heapify\ the\ elements\ with\ higher\ indices\ since\ they\ are\ leaf\ nodes}}
+\DoxyCodeLine{\Hypertarget{_heap_8cpp_source_l00025}00025\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ i\ =\ startIdx;\ i\ >\ 0;\ i-\/-\/)\ \{}
+\DoxyCodeLine{\Hypertarget{_heap_8cpp_source_l00026}00026\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_heap_a423e81df2c4800f42e5827abb631c095}{heapifyDown}}(i);}
+\DoxyCodeLine{\Hypertarget{_heap_8cpp_source_l00027}00027\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_heap_8cpp_source_l00028}00028\ \}}
+\DoxyCodeLine{\Hypertarget{_heap_8cpp_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{_heap_8cpp_source_l00030}\mbox{\hyperlink{class_heap_a576331b44a7f81f24b324261b1714732}{00030}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_heap_a576331b44a7f81f24b324261b1714732}{Heap::empty}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_heap_8cpp_source_l00031}00031\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_heap_a87f0e00ea91195bbf83b6784e90affbd}{elems}}.size()\ ==\ 1;}
+\DoxyCodeLine{\Hypertarget{_heap_8cpp_source_l00032}00032\ \}}
+\DoxyCodeLine{\Hypertarget{_heap_8cpp_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{_heap_8cpp_source_l00034}\mbox{\hyperlink{class_heap_acbf8935a8c01b3188d16ffca0011824b}{00034}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_heap_acbf8935a8c01b3188d16ffca0011824b}{Heap::extractMin}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_heap_8cpp_source_l00035}00035\ \ \ \ \ \textcolor{keyword}{auto}\ x\ =\ \mbox{\hyperlink{class_heap_a87f0e00ea91195bbf83b6784e90affbd}{elems}}[1];}
+\DoxyCodeLine{\Hypertarget{_heap_8cpp_source_l00036}00036\ \ \ \ \ \mbox{\hyperlink{class_heap_a87f0e00ea91195bbf83b6784e90affbd}{elems}}[1]\ =\ \mbox{\hyperlink{class_heap_a87f0e00ea91195bbf83b6784e90affbd}{elems}}.back();}
+\DoxyCodeLine{\Hypertarget{_heap_8cpp_source_l00037}00037\ \ \ \ \ \mbox{\hyperlink{class_heap_a87f0e00ea91195bbf83b6784e90affbd}{elems}}.pop\_back();}
+\DoxyCodeLine{\Hypertarget{_heap_8cpp_source_l00038}00038\ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{class_heap_a87f0e00ea91195bbf83b6784e90affbd}{elems}}.size()\ >\ 1)\ \mbox{\hyperlink{class_heap_a423e81df2c4800f42e5827abb631c095}{heapifyDown}}(1);}
+\DoxyCodeLine{\Hypertarget{_heap_8cpp_source_l00039}00039\ \ \ \ \ \textcolor{keywordflow}{return}\ x;}
+\DoxyCodeLine{\Hypertarget{_heap_8cpp_source_l00040}00040\ \}}
+\DoxyCodeLine{\Hypertarget{_heap_8cpp_source_l00041}00041\ }
+\DoxyCodeLine{\Hypertarget{_heap_8cpp_source_l00042}\mbox{\hyperlink{class_heap_a4c6a62f67cebbe16be684d464b2e19f0}{00042}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_heap_a4c6a62f67cebbe16be684d464b2e19f0}{Heap::insert}}(\textcolor{keywordtype}{int}\ x)\ \{}
+\DoxyCodeLine{\Hypertarget{_heap_8cpp_source_l00043}00043\ \ \ \ \ \mbox{\hyperlink{class_heap_a87f0e00ea91195bbf83b6784e90affbd}{elems}}.push\_back(x);}
+\DoxyCodeLine{\Hypertarget{_heap_8cpp_source_l00044}00044\ \ \ \ \ \mbox{\hyperlink{class_heap_ad52cc204b6ee2b666a8c2e30ab1477c9}{heapifyUp}}(\mbox{\hyperlink{class_heap_a87f0e00ea91195bbf83b6784e90affbd}{elems}}.size()-\/1);}
+\DoxyCodeLine{\Hypertarget{_heap_8cpp_source_l00045}00045\ \}}
+\DoxyCodeLine{\Hypertarget{_heap_8cpp_source_l00046}00046\ }
+\DoxyCodeLine{\Hypertarget{_heap_8cpp_source_l00047}\mbox{\hyperlink{class_heap_ad52cc204b6ee2b666a8c2e30ab1477c9}{00047}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_heap_ad52cc204b6ee2b666a8c2e30ab1477c9}{Heap::heapifyUp}}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ i)\ \{}
+\DoxyCodeLine{\Hypertarget{_heap_8cpp_source_l00048}00048\ \ \ \ \ \textcolor{keyword}{auto}\ x\ =\ \mbox{\hyperlink{class_heap_a87f0e00ea91195bbf83b6784e90affbd}{elems}}[i];}
+\DoxyCodeLine{\Hypertarget{_heap_8cpp_source_l00049}00049\ \ \ \ \ \textcolor{keywordflow}{while}\ (i\ >\ 1\ \&\&\ x\ <\ \mbox{\hyperlink{class_heap_a87f0e00ea91195bbf83b6784e90affbd}{elems}}[\mbox{\hyperlink{_heap_8cpp_a915a9564b15f2c25e828da2e9a05769c}{parent}}(i)])\ \{}
+\DoxyCodeLine{\Hypertarget{_heap_8cpp_source_l00050}00050\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_heap_a87f0e00ea91195bbf83b6784e90affbd}{elems}}[i]\ =\ \mbox{\hyperlink{class_heap_a87f0e00ea91195bbf83b6784e90affbd}{elems}}[\mbox{\hyperlink{_heap_8cpp_a915a9564b15f2c25e828da2e9a05769c}{parent}}(i)];}
+\DoxyCodeLine{\Hypertarget{_heap_8cpp_source_l00051}00051\ \ \ \ \ \ \ \ \ i\ =\ \mbox{\hyperlink{_heap_8cpp_a915a9564b15f2c25e828da2e9a05769c}{parent}}(i);}
+\DoxyCodeLine{\Hypertarget{_heap_8cpp_source_l00052}00052\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_heap_8cpp_source_l00053}00053\ \ \ \ \ \mbox{\hyperlink{class_heap_a87f0e00ea91195bbf83b6784e90affbd}{elems}}[i]\ =\ x;}
+\DoxyCodeLine{\Hypertarget{_heap_8cpp_source_l00054}00054\ \}}
+\DoxyCodeLine{\Hypertarget{_heap_8cpp_source_l00055}00055\ }
+\DoxyCodeLine{\Hypertarget{_heap_8cpp_source_l00056}\mbox{\hyperlink{class_heap_a423e81df2c4800f42e5827abb631c095}{00056}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_heap_a423e81df2c4800f42e5827abb631c095}{Heap::heapifyDown}}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ i)\ \{}
+\DoxyCodeLine{\Hypertarget{_heap_8cpp_source_l00057}00057\ \ \ \ \ \textcolor{keyword}{auto}\ x\ =\ \mbox{\hyperlink{class_heap_a87f0e00ea91195bbf83b6784e90affbd}{elems}}[i];}
+\DoxyCodeLine{\Hypertarget{_heap_8cpp_source_l00058}00058\ \ \ \ \ \textcolor{keywordflow}{while}\ (\textcolor{keyword}{true})\ \{}
+\DoxyCodeLine{\Hypertarget{_heap_8cpp_source_l00059}00059\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ k\ =\ \mbox{\hyperlink{_heap_8cpp_ac84ef3998ba958fd8abf03d08cc5ffcb}{leftChild}}(i);}
+\DoxyCodeLine{\Hypertarget{_heap_8cpp_source_l00060}00060\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (k\ >=\ \mbox{\hyperlink{class_heap_a87f0e00ea91195bbf83b6784e90affbd}{elems}}.size())}
+\DoxyCodeLine{\Hypertarget{_heap_8cpp_source_l00061}00061\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_heap_8cpp_source_l00062}00062\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (k+1\ <\ \mbox{\hyperlink{class_heap_a87f0e00ea91195bbf83b6784e90affbd}{elems}}.size()\ \&\&\ \mbox{\hyperlink{class_heap_a87f0e00ea91195bbf83b6784e90affbd}{elems}}[k+1]\ <\ \mbox{\hyperlink{class_heap_a87f0e00ea91195bbf83b6784e90affbd}{elems}}[k])}
+\DoxyCodeLine{\Hypertarget{_heap_8cpp_source_l00063}00063\ \ \ \ \ \ \ \ \ \ \ \ \ ++k;\ \textcolor{comment}{//\ right\ child\ of\ i}}
+\DoxyCodeLine{\Hypertarget{_heap_8cpp_source_l00064}00064\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\ !\ (\mbox{\hyperlink{class_heap_a87f0e00ea91195bbf83b6784e90affbd}{elems}}[k]\ <\ x)\ )}
+\DoxyCodeLine{\Hypertarget{_heap_8cpp_source_l00065}00065\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_heap_8cpp_source_l00066}00066\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_heap_a87f0e00ea91195bbf83b6784e90affbd}{elems}}[i]\ =\ \mbox{\hyperlink{class_heap_a87f0e00ea91195bbf83b6784e90affbd}{elems}}[k];}
+\DoxyCodeLine{\Hypertarget{_heap_8cpp_source_l00067}00067\ \ \ \ \ \ \ \ \ i\ =\ k;}
+\DoxyCodeLine{\Hypertarget{_heap_8cpp_source_l00068}00068\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_heap_8cpp_source_l00069}00069\ \ \ \ \ \mbox{\hyperlink{class_heap_a87f0e00ea91195bbf83b6784e90affbd}{elems}}[i]\ =\ x;}
+\DoxyCodeLine{\Hypertarget{_heap_8cpp_source_l00070}00070\ \}}
+
+\end{DoxyCode}
