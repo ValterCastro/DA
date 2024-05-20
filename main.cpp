@@ -1,7 +1,7 @@
 #include <iostream>
 
 #include "Include/Gestor.h"
-#include "src/Menu.h"
+#include "Menu.h"
 
 int main() {
     Menu menu;

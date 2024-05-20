@@ -9,7 +9,7 @@ bool \mbox{\hyperlink{class_graph_a2d2f69946b29fee07c53cb6552c7690e}{add\+Vertex
 \item 
 bool \mbox{\hyperlink{class_graph_a480675e98227b5cea4d990d301d43eee}{add\+Vertex}} (int id, double longitude, double latitude)
 \item 
-void \mbox{\hyperlink{class_graph_a45f1e9e76bcadbd27addb9c5cc455226}{tsp\+\_\+backtrack}} (vector$<$ int $>$ \&path, vector$<$ bool $>$ \&visited, double \&min\+\_\+cost, double cost\+So\+Far)
+void \mbox{\hyperlink{class_graph_a45f1e9e76bcadbd27addb9c5cc455226}{tsp\+\_\+graph}} (vector$<$ int $>$ \&path, vector$<$ bool $>$ \&visited, double \&min\+\_\+cost, double cost\+So\+Far)
 \item 
 double \mbox{\hyperlink{class_graph_a74ac3915ab78762e537d45657e30429b}{triangular\+Approximation}} ()
 \item 
@@ -276,7 +276,7 @@ The total distance of the resulting path.
 \index{Graph@{Graph}!tsp\_backtrack@{tsp\_backtrack}}
 \index{tsp\_backtrack@{tsp\_backtrack}!Graph@{Graph}}
 \doxysubsubsection{\texorpdfstring{tsp\_backtrack()}{tsp\_backtrack()}}
-{\footnotesize\ttfamily void Graph\+::tsp\+\_\+backtrack (\begin{DoxyParamCaption}\item[{vector$<$ int $>$ \&}]{path,  }\item[{vector$<$ bool $>$ \&}]{visited,  }\item[{double \&}]{min\+\_\+cost,  }\item[{double}]{cost\+So\+Far }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void Graph\+::tsp\+\_\+graph (\begin{DoxyParamCaption}\item[{vector$<$ int $>$ \&}]{path,  }\item[{vector$<$ bool $>$ \&}]{visited,  }\item[{double \&}]{min\+\_\+cost,  }\item[{double}]{cost\+So\+Far }\end{DoxyParamCaption})}
 
 This function implements the backtracking for the traveling salesman problem. It iteratively explores the graph, marks vertices as visited, and updates the path and minimum cost. Complexity\+: O(n!) where n is the number of vertices. (since it explores all possible permutations of vertices)
 

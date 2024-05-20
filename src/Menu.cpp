@@ -8,6 +8,8 @@
 #include "Menu.h"
 #include "Graph.h"
 #include <cstdlib>
+#include "Gestor.h"
+#include "Algoritmos.h"
 
 using namespace std;
 
@@ -36,7 +38,6 @@ int Menu::ReadMenu() {
     switch (option) {
         case 0:
             return 0;
-            break;
         case 1:
             ReadToyGraphMenu();
             break;
@@ -47,7 +48,7 @@ int Menu::ReadMenu() {
             ReadExtraGraphMenu();
             break;
         case 4:
-            AlgorithmMenu(option);
+            AlgorithmMenu();
             break;
         default:
             break;
@@ -72,46 +73,123 @@ void Menu::ReadExtraGraphMenu() {
     std::string extra_edges_800 = "../Extra_Fully_Connected_Graphs/edges_800.csv";
     std::string extra_edges_900 = "../Extra_Fully_Connected_Graphs/edges_900.csv";
 
-    ReadGraph(extra_nodes, "Extra_nodes");
-    ReadGraph(extra_edges_25, "Extra_edges");
-    ReadGraph(extra_edges_50, "Extra_edges");
-    ReadGraph(extra_edges_75, "Extra_edges");
-    ReadGraph(extra_edges_100, "Extra_edges");
-    ReadGraph(extra_edges_200, "Extra_edges");
-    ReadGraph(extra_edges_300, "Extra_edges");
-    ReadGraph(extra_edges_400, "Extra_edges");
-    ReadGraph(extra_edges_500, "Extra_edges");
-    ReadGraph(extra_edges_600, "Extra_edges");
-    ReadGraph(extra_edges_700, "Extra_edges");
-    ReadGraph(extra_edges_800, "Extra_edges");
-    ReadGraph(extra_edges_900, "Extra_edges");
 
+    cout << "------------------------------------------------------------------\n";
+    cout << "| 1 - Read extra_edges_25                                        |\n";
+    cout << "------------------------------------------------------------------\n";
+    cout << "| 2 - Read extra_edges_50                                        |\n";
+    cout << "------------------------------------------------------------------\n";
+    cout << "| 3 - Read extra_edges_75                                        |\n";
+    cout << "------------------------------------------------------------------\n";
+    cout << "| X - Read extra_edges_X (100, 200, 300... 900)                  |\n";
+    cout << "------------------------------------------------------------------\n";
+    cout << "| 0 - Go back                                                    |\n";
+    cout << "------------------------------------------------------------------\n";
+
+
+    ReadGraph(extra_nodes, Nodes);
+
+
+    int option;
+    cin >> option;
+
+    switch (option) {
+        case 0: return;
+        case 1: {
+            ReadGraph(extra_edges_25, Edges);
+            break;
+        } case 2: {
+            ReadGraph(extra_edges_50, Edges);
+            break;
+        } case 3: {
+            ReadGraph(extra_edges_75, Edges);
+            break;
+        } case 100: {
+            ReadGraph(extra_edges_100, Edges);
+            break;
+        } case 200: {
+            ReadGraph(extra_edges_200, Edges);
+            break;
+        } case 300: {
+            ReadGraph(extra_edges_300, Edges);
+            break;
+        } case 400: {
+            ReadGraph(extra_edges_400, Edges);
+            break;
+        } case 500: {
+            ReadGraph(extra_edges_500, Edges);
+            break;
+        } case 600: {
+            ReadGraph(extra_edges_600, Edges);
+            break;
+        } case 700: {
+            ReadGraph(extra_edges_700, Edges);
+            break;
+        } case 800: {
+            ReadGraph(extra_edges_800, Edges);
+            break;
+        } case 900: {
+            ReadGraph(extra_edges_900, Edges);
+            break;
+        } default:
+            break;
+
+    }
+
+    AlgorithmMenu();
 }
 
-void Menu::AlgorithmMenu(int option) {
-
+void Menu::AlgorithmMenu() {
     cout << "------------------------------------------------------------------\n";
     cout << "|          Project II Ocean Shipping && Urban Deliveries         |\n";
     cout << "------------------------------------------------------------------\n";
-    cout << "| 1 - BackTrack Algorithm                                        |\n";
+    cout << "| 1 - Backtracking                                               |\n";
     cout << "------------------------------------------------------------------\n";
-    cout << "| 2 - Triangular Heuristic Algorithm                             |\n";
+    cout << "| 2 - Triangular Approximation                                   |\n";
+    cout << "------------------------------------------------------------------\n";
+    cout << "| 3 - Nearest Neighbor                                           |\n";
     cout << "------------------------------------------------------------------\n";
     cout << "| 0 - Exit                                                       |\n";
     cout << "------------------------------------------------------------------\n";
 
 
+
+    int option;
     cin >> option;
 
     switch (option) {
-        case 0:
+        case 1: {
+            // TODO
+            clock_t start = clock();
+
+            double min_cost = numeric_limits<double>::max();
+            vector<int> path = {0};
+            vector<bool> visited(graph->getNumVertex(),false);
+            visited[0] = true;
+
+            graph->tsp_backtrack(path,visited,min_cost,0);
+
+            clock_t end = clock();
+
+            std::cout << "Minimum Distance: " << min_cost << std::endl;
+            std::cout << "Execution Time: " << double(end - start) / CLOCKS_PER_SEC << " seconds" << std::endl;
             break;
-        case 1:
-            //backtrack->calculate_tsp();
+        } case 2: {
+            clock_t start = clock();
+            double total = triangularApproximation(*graph);
+            clock_t end = clock();
+
+            std::cout << fixed << "Minimum Distance: " << total << std::endl;
+            std::cout << "Execution Time: " << double(end - start) / CLOCKS_PER_SEC << " seconds" << std::endl;
             break;
-        case 2:
-            break;
-        default:
+        } case 3: {
+            clock_t start = clock();
+            double distance = nearestNeighbor(graph->findVertex(0));
+            clock_t end = clock();
+
+            cout << fixed << "Minimum Distance: " << distance << endl;
+            std::cout << "Execution Time: " << double(end - start) / CLOCKS_PER_SEC << " seconds" << std::endl;
+        } default:
             break;
     }
 }
@@ -128,8 +206,7 @@ std::vector<std::string> split(const std::string& str, char delimiter) {
     return tokens;
 }
 
-int Menu::ReadGraph(std::string graph, std::string type) {
-
+int Menu::ReadGraph(const std::string &graph, GraphType type) {
     std::ifstream file(graph);
 
     if (!file.is_open()) {
@@ -139,121 +216,41 @@ int Menu::ReadGraph(std::string graph, std::string type) {
     std::string line;
     std::getline(file, line);
     std::vector<std::vector<std::string>> data;
-    while(std::getline(file, line)) {
+    while (std::getline(file, line)) {
         std::vector<std::string> tokens = split(line, ',');
         data.push_back(tokens);
     }
 
     file.close();
 
-
-    for (const auto& row : data) {
-        int i = 0;
-        int src = 0;
-        int dest = 0;
-        int triangle_id = 0;
-        vector<int> aux;
-        for (const auto& col : row) {
-            if(type == "Toy"){
-                if(graph == "../Toy-Graphs/shipping.csv" || graph == "../Toy-Graphs/stadiums.csv"){
-                    if(i < 2){
-                        backtrack->addVertex(stoi(col));
-                        aux.push_back(stoi(col));
-                    }
-                    else{
-                        backtrack->addEdge(aux[0],aux[1], stod(col));
-                    }
-                }
-                else{
-                    if(i == 0){
-                        backtrack->addVertex(stoi(col));
-                        aux.push_back(stoi(col));
-                        src = stoi(col);
-                    }
-                    else if(i == 1){
-                        backtrack->addVertex(stoi(col));
-                        aux.push_back(stoi(col));
-                        dest = stoi(col);
-                    }
-                    else if (i == 2){
-                        backtrack->addEdge(aux[0],aux[1], stod(col));
-                    }
-                    else if (i == 3){
-                        backtrack->findVertex(src)->setLabel(col);
-                    }
-                    else{
-                        backtrack->findVertex(dest)->setLabel(col);
-                    }
-
-                }
+    switch (type) {
+        case Nodes: {
+            for (const auto &row: data) {
+                int id = stoi(row[0]);
+                this->graph->addVertex(id);
+                Vertex *cur = this->graph->findVertex(id);
+                cur->setLongitude(stod(row[1]));
+                cur->setLatitude(stod(row[2]));
             }
-            else if(type == "Real-nodes"){
-                if(i == 0){
-                    triangular_heuristic->addVertex(stoi(col));
-                    triangle_id = stoi(col);
-                }
-                else if(i == 1){
-                    triangular_heuristic->findVertex(triangle_id)->setLongitude(stod(col));
-                }
-                else{
-                    triangular_heuristic->findVertex(triangle_id)->setLatitude(stod(col));
+            break;
+        } default: {
+            if (type == Both) {
+                set<int> vertices;
+                for (const auto &row: data) {
+                    vertices.insert(stoi(row[0]));
+                    vertices.insert(stoi(row[1]));
                 }
 
-            }
-            else if(type == "Real-edges"){
-                if(graph == "../Real-world-Graphs/graph1/edges.csv"){
-                    if(i < 2){
-                        //backtrack->addVertex(stoi(col));
-                        aux.push_back(stoi(col));
-                    }
-                    else{
-                        triangular_heuristic->addEdge(aux[0],aux[1], stod(col));
-                    }
-
-                }
-                else{
-                    if(i < 2){
-                        //backtrack->addVertex(stoi(col));
-                        aux.push_back(stoi(col));
-                    }
-                    else{
-                        triangular_heuristic->addEdge(aux[0],aux[1], stod(col));
-                    }
-                }
-
-            }
-            else if(type == "Extra-nodes"){
-                if(i == 0){
-                    extra->addVertex(stoi(col));
-                    triangle_id = stoi(col);
-                }
-                else if(i == 1){
-                    extra->findVertex(triangle_id)->setLongitude(stod(col));
-                }
-                else{
-                    extra->findVertex(triangle_id)->setLatitude(stod(col));
-                }
-
-            }
-            else{
-                if(i < 2){
-                    //backtrack->addVertex(stoi(col));
-                    aux.push_back(stoi(col));
-                }
-                else{
-                    extra->addEdge(aux[0],aux[1], stod(col));
+                for (int vertex: vertices) {
+                    this->graph->addVertex(vertex);
                 }
             }
 
-            //std::cout << col << " ";
-            ++i;
+            for (const auto& row : data)
+                this->graph->addEdge(stoi(row[0]), stoi(row[1]), stod(row[2]));
         }
-        aux.clear();
-        std::cout << std::endl;
     }
 
-
-    ReadMenu();
     return 0;
 }
 
@@ -281,26 +278,28 @@ void Menu::ReadRealWorldGraphMenu() {
     int option;
     cin >> option;
 
-    switch(option){
+    switch (option){
         case 1:
-            ReadGraph(graph1_nodes, "Real-nodes");
-            ReadGraph(graph1_edges, "Real-edges");
+            ReadGraph(graph1_nodes, Nodes);
+            ReadGraph(graph1_edges, Edges);
             break;
         case 2:
-            ReadGraph(graph2_nodes, "Real-nodes");
-            ReadGraph(graph2_edges, "Real-edges");
+            ReadGraph(graph2_nodes, Nodes);
+            ReadGraph(graph2_edges, Edges);
             break;
         case 3:
-            ReadGraph(graph3_nodes, "Real-nodes");
-            ReadGraph(graph3_edges, "Real-edges");
+            ReadGraph(graph3_nodes, Nodes);
+            ReadGraph(graph3_edges, Edges);
             break;
         case 4:
             ReadMenu();
+            break;
         default:
             ReadRealWorldGraphMenu();
             break;
     }
 
+    AlgorithmMenu();
 }
 
 void Menu::ReadToyGraphMenu() {
@@ -326,13 +325,13 @@ void Menu::ReadToyGraphMenu() {
 
     switch(option){
         case 1:
-            ReadGraph(shipping, "Toy");
+            ReadGraph(shipping, Both);
             break;
         case 2:
-            ReadGraph(stadiums, "Toy");
+            ReadGraph(stadiums, Both);
             break;
         case 3:
-            ReadGraph(tourism, "Toy");
+            ReadGraph(tourism, Both);
             break;
         case 4:
             ReadMenu();

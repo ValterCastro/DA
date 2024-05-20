@@ -4,7 +4,7 @@
 vector<Edge*> prim(Graph &graph, int root){
     vector<Edge*> mst;
 
-    auto cmp = [](Edge *left,  Edge *right)->bool { return left->getWeight() < right->getWeight(); };
+    auto cmp = [](Edge *left,  Edge *right)->bool { return left->getWeight() > right->getWeight(); };
     priority_queue<Edge*, vector<Edge*>, decltype(cmp)> pq(cmp);
 
     Vertex* source = graph.findVertex(root);
@@ -69,18 +69,19 @@ vector<Vertex*> dfsOnMst(const vector<Edge*> &mst, Vertex *root) {
 
 double totalDistance(const vector<Vertex*> &path) {
     auto findEdge = [](Vertex *v1, Vertex *v2)->Edge* {
-        auto edge = find_if(v1->getAdj().begin(), v1->getAdj().end(), [v2](Edge *cmp)->bool { return cmp->getDest() == v2; });
-        return edge == v1->getAdj().end() ? nullptr : *edge;
+        Edge *ret = nullptr;
+        for (Edge *cmp : v1->getAdj()) if (cmp->getDest() == v2) { ret = cmp; break; }
+        return ret;
     };
 
     double total = 0.0;
 
-    for (auto vertexItr = next(path.begin()); vertexItr != path.end(); vertexItr++) {
+    for (auto vertexItr = next(path.begin()); vertexItr != prev(path.end()); vertexItr++) {
         Vertex *v1 = *prev(vertexItr);
         Vertex *v2 = *vertexItr;
 
         Edge *common = findEdge(v1, v2);
-        total += common ? common->getWeight() : haversine(v1, v2);
+        total += common  ? common->getWeight() : haversine(v1, v2);
     }
 
     Edge *common = findEdge(path.back(), path[0]);
@@ -122,5 +123,38 @@ double nearestNeighbor(Vertex* root) {
 
     distance += haversine(current, root);
 
+    std::cout << path[0]->getOrig()->getId();
+
+    for (Edge *e : path) {
+        std::cout << " -> " << e->getDest()->getId();
+    }
+
+    std::cout << std::endl;
+
     return distance;
+}
+
+
+double backtrackHelper(Vertex *current, double min) {
+
+    for (Edge *edge : current->getAdj()) {
+        Vertex *v = edge->getDest();
+        if (!v->isVisited()) {
+            v->setVisited(true);
+            v->setDist(current->getDist() + edge->getWeight());
+
+            backtrackHelper(v, v->getDist());
+
+            v->setVisited(false);
+        }
+    }
+}
+
+double backtrack(Graph &g, Vertex *start) {
+    for (const auto &pair : g.getVertexMap()) {
+        pair.second->setVisited(false);
+        pair.second->setDist(0);
+    }
+
+    return backtrackHelper(start, -1);
 }

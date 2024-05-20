@@ -7,19 +7,23 @@
 
 #include "Graph.h"
 
+typedef enum {
+    Nodes = 1,
+    Edges = 2,
+    Both = Nodes | Edges
+} GraphType;
+
 class Menu{
 private:
-    int ReadGraph(std::string graph, std::string type);
+    int ReadGraph(const std::string &graph, GraphType type);
     void ReadToyGraphMenu();
     void ReadRealWorldGraphMenu();
     void ReadExtraGraphMenu();
-    void AlgorithmMenu(int option);
-
-
+    void AlgorithmMenu();
 public:
-    Graph* backtrack = new Graph();
-    Graph* triangular_heuristic = new Graph();
-    Graph* extra = new Graph();
+
+
+    Graph* graph = new Graph();
     Menu();
     int ReadMenu();
 };

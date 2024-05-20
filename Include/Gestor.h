@@ -12,7 +12,6 @@ using namespace std;
 
 class Gestor{
 private:
-    Graph graph;
     void readLine(string line);
     void read1File(const string &filename);
     void backtrack();
@@ -24,6 +23,7 @@ private:
 
     unordered_map<int,int> um_nodes;
 public:
+    Graph graph;
 
     Gestor();
     void menu();
